@@ -1,0 +1,25 @@
+alias la="ls -la"
+alias af="git add ."
+alias afc="git add . && git commit -m"
+alias afa="git add . && git commit --amend"
+
+alias p="git push"
+alias gp="git push"
+alias pu="git push -u origin HEAD"
+alias gpu="git push -u origin HEAD"
+
+alias gc="git commit -m"
+
+alias gri="git rebase -i"
+
+alias s="git status"
+alias gs="git status"
+
+alias l="git log"
+alias gl="git log"
+
+alias dif="git diff"
+
+alias vm="vim ~/.git_aliases"
+alias sm=". ~/.git_aliases"
+alias cm="cat ~/.git_aliases"
