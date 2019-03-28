@@ -1,3 +1,6 @@
+" Deal with extensions first
+source ~/.vim/.more/.vim_extensions
+
 " @@ Things that must go at the start of the file.
 " Set <Leader> to <Space>
 let mapleader=" " 
@@ -13,6 +16,9 @@ nnoremap <Leader>ev :vsp $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " @@ QOL things
+
+" @ Backspace
+set backspace=indent,eol,start
 
 " @ Searching
 " Incremental search
@@ -54,3 +60,6 @@ set foldlevelstart=99
 nnoremap <Leader>f za
 set foldmethod=indent
 
+" Now add additional stuff
+source ~/.vim/.more/.vim_python
+source ~/.vim/.more/.vim_more
