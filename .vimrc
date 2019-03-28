@@ -1,14 +1,43 @@
+" @@ Things that must go at the start of the file.
+" Set <Leader> to <Space>
+let mapleader=" " 
+
+" @ Keybinds
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+inoremap jj <Esc>
+" Move based on visual (not actual) lines
+" nnoremap j g
+" nnoremap k gk
+nnoremap <Leader>ev :vsp $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" @@ QOL things
+
+" @ Searching
+" Incremental search
+set incsearch
+" Highlight matches
+set hlsearch
+" Keybind to unhighlight matches
+nnoremap <Leader>h :nohlsearch<CR>
+
+" @ Tab settings
 set softtabstop=4
+set shiftwidth=4
 set tabstop=4
-syntax on
 set autoindent
 set smartindent
 set expandtab
-set shiftwidth=4
 
+" @ Appearance settings
+syntax on
+" showcmd can show you the last command at the bottom
+" set showcmd
+" cursorline can underline the current ..line
+" set cursorline
 set number
 set relativenumber
-
 augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -18,4 +47,10 @@ augroup END
 highlight LineNr ctermbg=Gray
 highlight CursorLineNr ctermbg=Gray
 
-inoremap jj <Esc>
+" @ Folding
+set foldenable
+set foldlevelstart=99
+" set foldnestmax=10
+nnoremap <Leader>f za
+set foldmethod=indent
+
