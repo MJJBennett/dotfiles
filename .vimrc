@@ -60,6 +60,9 @@ set foldlevelstart=99
 nnoremap <Leader>f za
 set foldmethod=indent
 
+" Mouse!
+set mouse=a
+
 " Now add additional stuff
 source ~/.vim/.more/.vim_python
 source ~/.vim/.more/.vim_more
