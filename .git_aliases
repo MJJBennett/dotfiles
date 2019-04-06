@@ -4,7 +4,7 @@
 alias s="git status"
 alias l="git log"
 
-alias dif="git diff foundation"
+alias dif="git diff ."
 alias gdif="git diff"
 
 alias af="git add ."

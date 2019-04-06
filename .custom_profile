@@ -1,1 +1,2 @@
-. ~/.git_aliases
+. ~/.dotfiles/.git_aliases
+. ~/.dotfiles/.more_aliases

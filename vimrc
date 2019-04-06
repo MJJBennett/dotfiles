@@ -14,6 +14,9 @@ inoremap jj <Esc>
 " nnoremap k gk
 nnoremap <Leader>ev :vsp $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
+" Spelling
+nnoremap <Leader>sp :set spell spelllang=en_ca<CR>
+nnoremap <Leader>w z=
 
 " @@ QOL things
 
