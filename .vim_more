@@ -1,3 +1,6 @@
 " Basically, more vim stuff.
 " Why not?
 
+" au BufNewFile,BufRead *.md :set spell spelllang=en_ca<CR>
+
+nnoremap <Leader>e :!

@@ -18,6 +18,10 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap <Leader>sp :set spell spelllang=en_ca<CR>
 nnoremap <Leader>w z=
 
+" @ Keybinds > Movement
+nnoremap <Leader>j Lz.
+nnoremap <Leader>k Hz.
+
 " @@ QOL things
 
 " @ Backspace

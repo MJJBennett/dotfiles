@@ -35,3 +35,6 @@ let g:ycm_extra_conf_globlist = ['~/.vim/.ycm_extra_conf.py']
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_semantic_triggers = {
+    \ 'C': [ 're!\w{4}' ]
+    \ }
