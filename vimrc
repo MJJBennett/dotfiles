@@ -44,11 +44,15 @@ set smartindent
 set expandtab
 
 " @ Appearance settings
-syntax on
+if !exists("g:syntax_on")
+    syntax enable
+endif
 " showcmd can show you the last command at the bottom
 " set showcmd
 " cursorline can underline the current ..line
 " set cursorline
+set showmatch " This moves the cursor back when doing parens
+
 set number
 set relativenumber
 augroup numbertoggle
