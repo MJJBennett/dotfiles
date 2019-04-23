@@ -21,6 +21,8 @@ nnoremap <Leader>w z=
 " @ Keybinds > Movement
 nnoremap <Leader>j Lz.
 nnoremap <Leader>k Hz.
+nnoremap <Leader><Leader>j <C-W>j
+nnoremap <Leader><Leader>k <C-W>k
 
 " @@ QOL things
 
