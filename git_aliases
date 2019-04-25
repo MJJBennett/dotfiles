@@ -10,6 +10,7 @@ alias gdif="git diff"
 alias af="git add ."
 alias afc="git add . && git commit -m"
 function afcp { afc "$1"; git push; }
+function afcpu { afc "$1"; git push -u origin HEAD; }
 function afcpf { afc "$1"; git push -f; }
 alias afa="git add . && git commit --amend"
 
