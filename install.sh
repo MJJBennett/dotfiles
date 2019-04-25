@@ -19,11 +19,11 @@ cp vim_extensions ~/.vim/.more
 cp ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 
 if [ -f ~/.profile ]; then
-    echo ". ~/.dotfiles/.custom_profile" >> ~/.profile
+    echo ". ~/.dotfiles/custom_profile" >> ~/.profile
 elif [ -f ~/.bash_profile ]; then
-    echo ". ~/.dotfiles/.custom_profile" >> ~/.bashrc
+    echo ". ~/.dotfiles/custom_profile" >> ~/.bashrc
 elif [ -f ~/.bashrc ]; then
-    echo ". ~/.dotfiles/.custom_profile" >> ~/.bash_profile
+    echo ". ~/.dotfiles/custom_profile" >> ~/.bash_profile
 else
     echo "Could not find a place to stick the sourcing of ~/.dotfiles/.custom_profile !"
 fi
