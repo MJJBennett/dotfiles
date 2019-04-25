@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rhysd/vim-clang-format'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,6 +28,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" YCM Configuration
 let g:ycm_clangd_binary_path = "/usr/local/Cellar/llvm/8.0.0/bin/clangd/"
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
@@ -38,3 +40,9 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_semantic_triggers = {
     \ 'C': [ 're!\w{4}' ]
     \ }
+
+" Clang Format Configuration
+let g:clang_format#style_options = {
+    \ "BreakBeforeBraces" : "Stroustrup",
+    \ "Standard" : "C++11"}
+

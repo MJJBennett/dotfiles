@@ -24,6 +24,9 @@ nnoremap <Leader>k Hz.
 nnoremap <Leader><Leader>j <C-W>j
 nnoremap <Leader><Leader>k <C-W>k
 
+" @ Keybinds > Extensions
+vnoremap <C-R><C-F> :ClangFormat<CR>
+
 " @@ QOL things
 
 " @ Backspace
