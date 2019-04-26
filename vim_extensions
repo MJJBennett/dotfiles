@@ -53,5 +53,8 @@ let g:clang_format#style_options = {
     \ "AllowShortIfStatementsOnASingleLine" : "true",
     \ "TabWidth" : 4,
     \ "UseTab" : "Never",
+    \ "AlignOperands" : "true",
+    \ "AlignTrailingComments" : "true",
+    \ "AlignConsecutiveAssignments" : "true",
     \ "Standard" : "C++11"}
 
