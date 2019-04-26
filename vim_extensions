@@ -43,6 +43,15 @@ let g:ycm_semantic_triggers = {
 
 " Clang Format Configuration
 let g:clang_format#style_options = {
-    \ "BreakBeforeBraces" : "Stroustrup",
+    \ "BreakBeforeBraces" : "Allman",
+    \ "AlwaysBreakTemplateDeclarations" : "true",
+    \ "AccessModifierOffset" : -4,
+    \ "PointerAlignment" : "Left",
+    \ "ColumnLimit" : "99",
+    \ "AllowShortCaseLabelsOnASingleLine" : "true",
+    \ "AllowShortFunctionsOnASingleLine" : "All",
+    \ "AllowShortIfStatementsOnASingleLine" : "true",
+    \ "TabWidth" : 4,
+    \ "UseTab" : "Never",
     \ "Standard" : "C++11"}
 
