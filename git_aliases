@@ -22,6 +22,9 @@ alias p="git push"
 alias pf="git push -f"
 alias pu="git push -u origin HEAD"
 
+alias sta="git stash"
+alias pop="git stash pop"
+
 alias ecg="echo $BASH_SOURCE"
 alias vg="vim $BASH_SOURCE"
 alias sg=". $BASH_SOURCE"
