@@ -4,3 +4,17 @@
 " au BufNewFile,BufRead *.md :set spell spelllang=en_ca<CR>
 
 nnoremap <Leader>e :!
+nnoremap <Leader>cf :!cat %<CR>
+
+set foldmethod=syntax
+
+function FixQuotes()
+    " This function fixes more than just quotes
+    " However, it is called 'FixQuotes'
+    %s/“/"/ge
+    %s/”/"/ge
+    %s/’/'/ge
+    %s/‘/'/ge
+endfunction
+
+nnoremap <Leader>fq :call FixQuotes()<CR>
