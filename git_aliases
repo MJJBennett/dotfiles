@@ -3,6 +3,10 @@
 
 alias s="git status"
 alias l="git log"
+alias b="git branch"
+
+alias fall="git fetch --all"
+alias pull="git pull"
 
 alias dif="git diff ."
 alias gdif="git diff"
