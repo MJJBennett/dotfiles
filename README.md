@@ -17,3 +17,20 @@ Now run `vim`, then call `:PluginInstall`.
 
 Finally, compile YouCompleteMe: `cd ~/.vim/bundle/YouCompleteMe/ && ./install.py --clang-completer` (may need to install `python-dev` via `apt-get` beforehand)
 
+### Terminal / Shell Configuration
+
+Use a package manager to install zsh (`sudo apt-get install zsh`, `brew install zsh`, etc)
+
+Install oh-my-zsh via curl:
+
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+
+Use ZSh theme `agnoster`
+
+Install Powerline fonts:
+
+```
+git clone https://github.com/powerline/fonts
+cd fonts
+./install.sh
+```

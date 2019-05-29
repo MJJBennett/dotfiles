@@ -18,13 +18,14 @@ cp vim_extensions ~/.vim/.more
 # Install YouCompleteMe generic script.
 cp ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 
-if [ -f ~/.profile ]; then
-    echo ". ~/.dotfiles/custom_profile" >> ~/.profile
-elif [ -f ~/.bash_profile ]; then
-    echo ". ~/.dotfiles/custom_profile" >> ~/.bash_profile
-elif [ -f ~/.bashrc ]; then
-    echo ". ~/.dotfiles/custom_profile" >> ~/.bashrc
-else
-    echo "Could not find a place to stick the sourcing of ~/.dotfiles/.custom_profile !"
-fi
+# if [ -f ~/.profile ]; then
+#     echo ". ~/.dotfiles/custom_profile" >> ~/.profile
+# elif [ -f ~/.bash_profile ]; then
+#     echo ". ~/.dotfiles/custom_profile" >> ~/.bash_profile
+# elif [ -f ~/.bashrc ]; then
+#     echo ". ~/.dotfiles/custom_profile" >> ~/.bashrc
+# else
+#     echo "Could not find a place to stick the sourcing of ~/.dotfiles/.custom_profile !"
+# fi
 
+echo "Complete install by putting `. ~/.dotfiles/custom_profile` into relevant .rc file."

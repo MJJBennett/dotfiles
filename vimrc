@@ -48,6 +48,7 @@ set tabstop=4
 set autoindent
 set smartindent
 set expandtab
+set clipboard+=unnamed
 
 " @ Appearance settings
 if !exists("g:syntax_on")
