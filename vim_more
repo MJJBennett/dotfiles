@@ -5,6 +5,10 @@
 
 nnoremap <Leader>e :!
 nnoremap <Leader>cf :!cat %<CR>
+" This makes s work as no-copy d
+nnoremap s "_d
+" Repeat previous macro
+nnoremap Q @@
 
 set foldmethod=syntax
 
