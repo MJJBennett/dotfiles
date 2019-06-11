@@ -9,6 +9,8 @@ nnoremap <Leader>cf :!cat %<CR>
 nnoremap s "_d
 " Repeat previous macro
 nnoremap Q @@
+" Opposite of J
+nnoremap <Leader>n i<CR><ESC>
 
 set foldmethod=syntax
 
