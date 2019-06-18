@@ -76,6 +76,7 @@ set foldenable
 set foldlevelstart=99
 " set foldnestmax=10
 nnoremap <Leader>f za
+vnoremap <Leader>f zf
 set foldmethod=indent
 
 " Mouse!

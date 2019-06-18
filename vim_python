@@ -4,6 +4,7 @@ au BufNewFile,BufRead *.py
     \ set shiftwidth=4 |
     \ set textwidth=100 |
     \ set expandtab |
+    \ set foldmethod=indent |
     \ set autoindent |
     \ set fileformat=unix
 
