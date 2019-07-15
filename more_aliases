@@ -6,3 +6,5 @@ alias ccmake="cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 alias fcb="ccmake && make all && ctest --verbose"
 
 alias la="ls -la"
+alias usage="du -h -d1"
+alias ze="vim ~/.zshrc"
