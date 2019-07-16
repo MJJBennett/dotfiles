@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
-# Emmet - HTML
+" Emmet - HTML
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 
