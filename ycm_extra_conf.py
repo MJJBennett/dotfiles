@@ -5,8 +5,6 @@ import logging
 import ycm_core
 import re
 
-print("Doing things!!!")
-
 BASE_FLAGS = [
         '-Wall',
         '-Wextra',
@@ -177,3 +175,8 @@ def FlagsForFile(filename):
             'flags': final_flags,
             'do_cache': True
             }
+
+def Settings(**kwargs):
+    return {
+        'flags': [ '-x', 'c++', '-Wall', '-Wextra', '-Werror', '-std=c++17' ],
+    }
