@@ -13,3 +13,7 @@ alias ze="vim ~/.zshrc"
 function gch {
     git clone $(gitify -p "$1") $2; 
 }
+
+# Writing aliases
+alias cw="wc -w *.md"
+alias cwt="cw | egrep '([0-9]+) *total' | egrep -o '[0-9]+'"
