@@ -8,3 +8,8 @@ alias fcb="ccmake && make all && ctest --verbose"
 alias la="ls -la"
 alias usage="du -h -d1"
 alias ze="vim ~/.zshrc"
+
+# This only works with gitify somewhere in the path
+function gch {
+    git clone $(gitify -p "$1") $2; 
+}
