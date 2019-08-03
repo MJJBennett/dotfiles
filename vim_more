@@ -11,6 +11,8 @@ nnoremap s "_d
 nnoremap Q @@
 " Opposite of J
 nnoremap <Leader>n i<CR><ESC>
+" Save files faster
+nnoremap <Leader>s :w<CR>
 
 set foldmethod=syntax
 
