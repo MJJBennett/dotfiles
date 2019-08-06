@@ -38,6 +38,9 @@ fi
 if [ -e ~/.vim/.ycm_extra_conf.py ]
     then cp ~/.vim/.ycm_extra_conf.py ~/.dotfiles/old/.vim/
 fi
+if [ -e ~/.zshrc ]
+    then cp ~/.zshrc ~/.dotfiles/old/.zshrc
+fi
 fi
 
 echo "Installing generic configuration files."
@@ -69,5 +72,8 @@ touch ~/.dotfiles/old/.marker
 # else
 #     echo "Could not find a place to stick the sourcing of ~/.dotfiles/.custom_profile !"
 # fi
+
+echo "Installing zshrc."
+cp .zshrc ~/
 
 echo "Complete install by putting `. ~/.dotfiles/custom_profile` into relevant .rc file."
