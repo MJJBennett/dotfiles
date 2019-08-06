@@ -1,0 +1,126 @@
+" Initial sources here
+
+" @@ Things that must go at the start of the file.
+" Set <Leader> to <Space>
+let mapleader=" " 
+
+" @ Keybinds
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+inoremap jj <Esc>
+" Move based on visual (not actual) lines
+" nnoremap j g
+" nnoremap k gk
+nnoremap <Leader>ev :vsp $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+" Spelling
+nnoremap <Leader>sp :set spell spelllang=en_ca<CR>
+nnoremap <Leader>w z=
+
+" @ Keybinds > Movement
+nnoremap <Leader>j Lz.
+nnoremap <Leader>k Hz.
+nnoremap <Leader><Leader>j <C-W>j
+nnoremap <Leader><Leader>k <C-W>k
+
+" @ Keybinds > Extensions
+vnoremap <C-R><C-F> :ClangFormat<CR>
+nnoremap <C-R><C-A> :ClangFormat<CR>
+
+" @@ QOL things
+
+" @ Backspace
+set backspace=indent,eol,start
+
+" @ Searching
+" Incremental search
+set incsearch
+" Highlight matches
+set hlsearch
+" Keybind to unhighlight matches
+nnoremap <Leader>h :nohlsearch<CR>
+
+" @ Tab settings
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set autoindent
+set smartindent
+set expandtab
+set clipboard+=unnamed
+
+" @ Appearance settings
+if !exists("g:syntax_on")
+    syntax enable
+endif
+" showcmd can show you the last command at the bottom
+" set showcmd
+" cursorline can underline the current ..line
+" set cursorline
+set showmatch " This moves the cursor back when doing parens
+
+set number
+set relativenumber
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
+highlight LineNr ctermbg=Gray
+highlight CursorLineNr ctermbg=Gray
+
+" @ Folding
+set foldenable
+set foldlevelstart=99
+" set foldnestmax=10
+nnoremap <Leader>f za
+vnoremap <Leader>f zf
+set foldmethod=indent
+
+" Mouse!
+set mouse=a
+
+" Additional vim config sourcing after here
+" Basically, more vim stuff.
+" Why not?
+
+" au BufNewFile,BufRead *.md :set spell spelllang=en_ca<CR>
+
+nnoremap <Leader>e :!
+nnoremap <Leader>cf :!cat %<CR>
+" This makes s work as no-copy d
+nnoremap s "_d
+" Repeat previous macro
+nnoremap Q @@
+" Opposite of J
+nnoremap <Leader>n i<CR><ESC>
+" Save files faster
+nnoremap <Leader>s :w<CR>
+
+set foldmethod=syntax
+
+function FixQuotes()
+    " This function fixes more than just quotes
+    " However, it is called 'FixQuotes'
+    %s/“/"/ge
+    %s/”/"/ge
+    %s/’/'/ge
+    %s/‘/'/ge
+endfunction
+
+nnoremap <Leader>fq :call FixQuotes()<CR>
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=100 |
+    \ set expandtab |
+    \ set foldmethod=indent |
+    \ set autoindent |
+    \ set fileformat=unix
+
+" au BufRead,BufNewFile *.py,,*.cpp,*.h match BadWhitespace /\s\+$/
+
+set encoding=utf-8
+
