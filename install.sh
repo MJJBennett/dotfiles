@@ -8,6 +8,16 @@ mkdir -p ~/.dotfiles/old/.dotfiles
 mkdir -p ~/.dotfiles/old/.vim
 mkdir -p ~/.dotfiles/old/.vim/.more
 
+# We need to construct the vimrc first -
+# In order to allow multiple build configurations,
+# we need to combine the sourcing vimrc with its source
+# commands. This isn't really optimal, but as they say,
+# if it works, don't fix it until it causes a huge and
+# damaging inconvenience.
+cat vimrc-sourcing-before > vimrc
+cat vimrc-src >> vimrc
+cat vimrc-sourcing-after >> vimrc
+
 if [ ! -f ~/.dotfiles/old/.marker ]; then
 echo "Backing up current configuration files."
 # Back up current configuration before potential overwrites

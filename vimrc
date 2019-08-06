@@ -1,5 +1,4 @@
-" Deal with extensions first
-source ~/.vim/.more/vim_extensions
+" Initial sources here
 
 " @@ Things that must go at the start of the file.
 " Set <Leader> to <Space>
@@ -82,6 +81,4 @@ set foldmethod=indent
 " Mouse!
 set mouse=a
 
-" Now add additional stuff
-source ~/.vim/.more/vim_python
-source ~/.vim/.more/vim_more
+" Additional vim config sourcing after here
