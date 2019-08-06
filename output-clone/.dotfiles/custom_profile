@@ -1,0 +1,6 @@
+. ~/.dotfiles/git_aliases
+. ~/.dotfiles/more_aliases
+
+if [ -f ~/.dotfiles/local_profile ]; then 
+    . ~/.dotfiles/local_profile
+fi

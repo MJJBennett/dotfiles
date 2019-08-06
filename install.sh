@@ -53,19 +53,24 @@ fi
 echo "Installing generic configuration files."
 # Install generic configuration. (Aliases mostly)
 cp git_aliases ~/.dotfiles
+cp git_aliases output-clone/.dotfiles
 cp custom_profile ~/.dotfiles
+cp custom_profile output-clone/.dotfiles
 cp more_aliases ~/.dotfiles
+cp more_aliases output-clone/.dotfiles
 
 echo "Installing Vim configuration files."
 # Install Vim configuration.
 cp vimrc ~/.vim
-cp vim_more ~/.vim/.more
-cp vim_python ~/.vim/.more
-cp vim_extensions ~/.vim/.more
+cp vimrc output-clone/.vim
+cp vim_more output-clone/.vim/.more
+cp vim_python output-clone/.vim/.more
+cp vim_extensions output-clone/.vim/.more
 
 echo "Installing YouCompleteMe handler."
 # Install YouCompleteMe generic script.
 cp ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+cp ycm_extra_conf.py output-clone/.vim/.ycm_extra_conf.py
 
 # Make a marker that this script has been run, so backups aren't made again.
 touch ~/.dotfiles/old/.marker
