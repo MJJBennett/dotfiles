@@ -1,0 +1,28 @@
+" Basically, more vim stuff.
+" Why not?
+
+" au BufNewFile,BufRead *.md :set spell spelllang=en_ca<CR>
+
+nnoremap <Leader>e :!
+nnoremap <Leader>cf :!cat %<CR>
+" This makes s work as no-copy d
+nnoremap s "_d
+" Repeat previous macro
+nnoremap Q @@
+" Opposite of J
+nnoremap <Leader>n i<CR><ESC>
+" Save files faster
+nnoremap <Leader>s :w<CR>
+
+set foldmethod=syntax
+
+function FixQuotes()
+    " This function fixes more than just quotes
+    " However, it is called 'FixQuotes'
+    %s/“/"/ge
+    %s/”/"/ge
+    %s/’/'/ge
+    %s/‘/'/ge
+endfunction
+
+nnoremap <Leader>fq :call FixQuotes()<CR>

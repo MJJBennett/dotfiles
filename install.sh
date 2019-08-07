@@ -8,6 +8,16 @@ mkdir -p ~/.dotfiles/old/.dotfiles
 mkdir -p ~/.dotfiles/old/.vim
 mkdir -p ~/.dotfiles/old/.vim/.more
 
+# We need to construct the vimrc first -
+# In order to allow multiple build configurations,
+# we need to combine the sourcing vimrc with its source
+# commands. This isn't really optimal, but as they say,
+# if it works, don't fix it until it causes a huge and
+# damaging inconvenience.
+cat vimrc-sourcing-before > vimrc
+cat vimrc-src >> vimrc
+cat vimrc-sourcing-after >> vimrc
+
 if [ ! -f ~/.dotfiles/old/.marker ]; then
 echo "Backing up current configuration files."
 # Back up current configuration before potential overwrites
@@ -46,19 +56,24 @@ fi
 echo "Installing generic configuration files."
 # Install generic configuration. (Aliases mostly)
 cp git_aliases ~/.dotfiles
+cp git_aliases output-clone/.dotfiles
 cp custom_profile ~/.dotfiles
+cp custom_profile output-clone/.dotfiles
 cp more_aliases ~/.dotfiles
+cp more_aliases output-clone/.dotfiles
 
 echo "Installing Vim configuration files."
 # Install Vim configuration.
 cp vimrc ~/.vim
-cp vim_more ~/.vim/.more
-cp vim_python ~/.vim/.more
-cp vim_extensions ~/.vim/.more
+cp vimrc output-clone/.vim
+cp vim_more output-clone/.vim/.more
+cp vim_python output-clone/.vim/.more
+cp vim_extensions output-clone/.vim/.more
 
 echo "Installing YouCompleteMe handler."
 # Install YouCompleteMe generic script.
 cp ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+cp ycm_extra_conf.py output-clone/.vim/.ycm_extra_conf.py
 
 # Make a marker that this script has been run, so backups aren't made again.
 touch ~/.dotfiles/old/.marker

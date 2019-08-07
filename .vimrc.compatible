@@ -1,4 +1,3 @@
-source ~/.vim/.more/vim_extensions
 " Initial sources here
 
 " @@ Things that must go at the start of the file.
@@ -83,5 +82,45 @@ set foldmethod=indent
 set mouse=a
 
 " Additional vim config sourcing after here
-source ~/.vim/.more/vim_python
-source ~/.vim/.more/vim_more
+" Basically, more vim stuff.
+" Why not?
+
+" au BufNewFile,BufRead *.md :set spell spelllang=en_ca<CR>
+
+nnoremap <Leader>e :!
+nnoremap <Leader>cf :!cat %<CR>
+" This makes s work as no-copy d
+nnoremap s "_d
+" Repeat previous macro
+nnoremap Q @@
+" Opposite of J
+nnoremap <Leader>n i<CR><ESC>
+" Save files faster
+nnoremap <Leader>s :w<CR>
+
+set foldmethod=syntax
+
+function FixQuotes()
+    " This function fixes more than just quotes
+    " However, it is called 'FixQuotes'
+    %s/“/"/ge
+    %s/”/"/ge
+    %s/’/'/ge
+    %s/‘/'/ge
+endfunction
+
+nnoremap <Leader>fq :call FixQuotes()<CR>
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=100 |
+    \ set expandtab |
+    \ set foldmethod=indent |
+    \ set autoindent |
+    \ set fileformat=unix
+
+" au BufRead,BufNewFile *.py,,*.cpp,*.h match BadWhitespace /\s\+$/
+
+set encoding=utf-8
+

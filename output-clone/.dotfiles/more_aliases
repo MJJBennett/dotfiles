@@ -1,0 +1,19 @@
+alias macmake="cmake .. -DCMAKE_CXX_COMPILER=/usr/local/bin/g++ -DCMAKE_C_COMPILER=/usr/local/bin/gcc-8"
+alias macmakecc="macmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+
+alias ccmake="cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+
+alias fcb="ccmake && make all && ctest --verbose"
+
+alias la="ls -la"
+alias usage="du -h -d1"
+alias ze="vim ~/.zshrc"
+
+# This only works with gitify somewhere in the path
+function gch {
+    git clone $(gitify -p "$1") $2; 
+}
+
+# Writing aliases
+alias cw="wc -w *.md"
+alias cwt="cw | egrep '([0-9]+) *total' | egrep -o '[0-9]+'"
