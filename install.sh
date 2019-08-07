@@ -2,10 +2,7 @@
 
 # Make the folders we'll be using.
 mkdir -p ~/.vim/.more
-mkdir -p ~/.dotfiles
-mkdir -p ~/.dotfiles/old
 mkdir -p ~/.dotfiles/old/.dotfiles
-mkdir -p ~/.dotfiles/old/.vim
 mkdir -p ~/.dotfiles/old/.vim/.more
 
 # We need to construct the vimrc first -
@@ -14,9 +11,9 @@ mkdir -p ~/.dotfiles/old/.vim/.more
 # commands. This isn't really optimal, but as they say,
 # if it works, don't fix it until it causes a huge and
 # damaging inconvenience.
-cat vimrc-sourcing-before > vimrc
-cat vimrc-src >> vimrc
-cat vimrc-sourcing-after >> vimrc
+cat vim/vimrc-sourcing-before > vimrc
+cat vim/vimrc-src >> vimrc
+cat vim/vimrc-sourcing-after >> vimrc
 
 if [ ! -f ~/.dotfiles/old/.marker ]; then
 echo "Backing up current configuration files."
@@ -66,9 +63,11 @@ echo "Installing Vim configuration files."
 # Install Vim configuration.
 cp vimrc ~/.vim
 cp vimrc output-clone/.vim
-cp vim_more output-clone/.vim/.more
-cp vim_python output-clone/.vim/.more
-cp vim_extensions output-clone/.vim/.more
+# Delete vimrc (it's generated in this script anyways)
+rm vimrc
+cp vim/vim_more output-clone/.vim/.more
+cp vim/vim_python output-clone/.vim/.more
+cp vim/vim_extensions output-clone/.vim/.more
 
 echo "Installing YouCompleteMe handler."
 # Install YouCompleteMe generic script.
