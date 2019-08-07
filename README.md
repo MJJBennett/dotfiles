@@ -25,9 +25,7 @@ Install oh-my-zsh via curl:
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
-Use ZSh theme `agnoster`
-
-Install Powerline fonts:
+Install Powerline fonts (for theme Agnoster):
 
 ```
 git clone https://github.com/powerline/fonts
