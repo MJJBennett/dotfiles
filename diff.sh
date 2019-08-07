@@ -1,10 +1,15 @@
-diff git_aliases ~/.dotfiles/git_aliases
-diff custom_profile ~/.dotfiles/custom_profile
-diff more_aliases ~/.dotfiles/more_aliases
+function dotdif
+{
+    diff "$1" ~/.dotfiles/"$1";
+}
 
-diff vimrc ~/.vim/vimrc
-diff vim_more ~/.vim/.more/vim_more
-diff vim_python ~/.vim/.more/vim_python
-diff vim_extensions ~/.vim/.more/vim_extensions
+dotdif git_aliases
+dotdif custom_profile
+dotdif more_aliases
 
-diff ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+diff vim/vimrc-src ~/.vim/vimrc
+diff vim/vim_more ~/.vim/.more/vim_more
+diff vim/vim_python ~/.vim/.more/vim_python
+diff vim/vim_extensions ~/.vim/.more/vim_extensions
+
+diff vim/ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py

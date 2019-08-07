@@ -71,8 +71,8 @@ cp vim/vim_extensions output-clone/.vim/.more
 
 echo "Installing YouCompleteMe handler."
 # Install YouCompleteMe generic script.
-cp ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
-cp ycm_extra_conf.py output-clone/.vim/.ycm_extra_conf.py
+cp vim/ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+cp vim/ycm_extra_conf.py output-clone/.vim/.ycm_extra_conf.py
 
 # Make a marker that this script has been run, so backups aren't made again.
 touch ~/.dotfiles/old/.marker
