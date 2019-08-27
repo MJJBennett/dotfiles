@@ -1,0 +1,22 @@
+" For reference, see the vim-lsp documentation:
+" https://github.com/prabirshrestha/vim-lsp
+" https://github.com/prabirshrestha/vim-lsp/wiki/Servers-ccls
+" And the ccls wiki:
+" https://github.com/MaskRay/ccls/wiki/vim-lsp
+
+if executable('ccls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'ccls',
+        \ 'cmd': {server_info->['ccls']},
+        \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+        \ 'initialization_options': {},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc', 'h', 'hpp'],
+        \ })
+endif
+
+" Note: <M-k> is Alt-k
+nn <silent> <M-d> :LspDefinition<cr>
+nn <silent> <M-r> :LspReferences<cr>
+nn <f2> :LspRename<cr>
+nn <silent> <M-a> :LspWorkspaceSymbol<cr>
+nn <silent> <M-l> :LspDocumentSymbol<cr>
