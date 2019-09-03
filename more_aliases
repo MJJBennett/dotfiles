@@ -1,6 +1,10 @@
 alias macmake="cmake .. -DCMAKE_CXX_COMPILER=/usr/local/bin/g++ -DCMAKE_C_COMPILER=/usr/local/bin/gcc-8"
 alias macmakecc="macmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 
+# These require a path to be passed
+alias cmake-gcc="cmake -DCMAKE_CXX_COMPILER=/usr/local/bin/g++ -DCMAKE_C_COMPILER=/usr/local/bin/gcc-8"
+alias cmake-gcc-cc="cmake-gcc -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+
 alias ccmake="cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 
 alias fcb="ccmake && make all && ctest --verbose"
