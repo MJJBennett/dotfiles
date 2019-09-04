@@ -65,6 +65,9 @@ cp vimrc ~/.vim
 cp vimrc output-clone/.vim
 # Delete vimrc (it's generated in this script anyways)
 rm vimrc
+cp vim/vim_more ~/.vim/.more
+cp vim/vim_python ~/.vim/.more
+cp vim/vim_extensions ~/.vim/.more
 cp vim/vim_more output-clone/.vim/.more
 cp vim/vim_python output-clone/.vim/.more
 cp vim/vim_extensions output-clone/.vim/.more

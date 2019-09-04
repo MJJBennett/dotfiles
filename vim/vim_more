@@ -5,6 +5,7 @@
 
 nnoremap <Leader>e :!
 nnoremap <Leader>cf :!cat %<CR>
+nnoremap <Leader>cw :!wc -w %<CR>
 " This makes s work as no-copy d
 nnoremap s "_d
 " Repeat previous macro
