@@ -21,3 +21,6 @@ function gch {
 # Writing aliases
 alias cw="wc -w *.md"
 alias cwt="cw | egrep '([0-9]+) *total' | egrep -o '[0-9]+'"
+
+# Mac aliases
+alias mac-psc="log show --predicate 'eventMessage contains \"Previous shutdown cause\"' --last 24h"
