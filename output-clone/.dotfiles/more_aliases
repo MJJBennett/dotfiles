@@ -24,3 +24,4 @@ alias cwt="cw | egrep '([0-9]+) *total' | egrep -o '[0-9]+'"
 
 # Mac aliases
 alias mac-psc="log show --predicate 'eventMessage contains \"Previous shutdown cause\"' --last 24h"
+alias mac-upt="sudo sntp -sS time.apple.com"
