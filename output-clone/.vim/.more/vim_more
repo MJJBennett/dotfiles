@@ -3,9 +3,12 @@
 
 " au BufNewFile,BufRead *.md :set spell spelllang=en_ca<CR>
 
+" I'm claiming <Leader>c for my misc commands
 nnoremap <Leader>e :!
 nnoremap <Leader>cf :!cat %<CR>
 nnoremap <Leader>cw :!wc -w %<CR>
+" Huge address space!!!
+nnoremap <Leader>ccwt :!wt-timer 30<CR>
 " This makes s work as no-copy d
 nnoremap s "_d
 " Repeat previous macro
