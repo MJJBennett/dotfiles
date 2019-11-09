@@ -8,7 +8,7 @@ nnoremap <Leader>e :!
 nnoremap <Leader>cf :!cat %<CR>
 nnoremap <Leader>cw :!wc -w %<CR>
 " Huge address space!!!
-nnoremap <Leader>ccwt :!wt-timer 30<CR>
+nnoremap <Leader>ccwt :!wt-start<CR>
 " This makes s work as no-copy d
 nnoremap s "_d
 " Repeat previous macro

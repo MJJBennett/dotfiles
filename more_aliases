@@ -10,6 +10,7 @@ alias ccmake="cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 alias fcb="ccmake && make all && ctest --verbose"
 
 alias la="ls -la"
+alias lac="ls -la -I \"*.ignore\" -I \".clang-format\" -I \".git\" -I \".idea\" -I \"__pycache__\" -I \".git\" -I \".git\" -I \".git\""
 alias usage="du -h -d1"
 alias ze="vim ~/.zshrc"
 
