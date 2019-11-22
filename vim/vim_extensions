@@ -65,3 +65,5 @@ let g:clang_format#style_options = {
     \ "AlignConsecutiveAssignments" : "true",
     \ "Standard" : "C++11"}
 
+" NetRW Configuration (Technically builtin, but hey)
+let g:netrw_liststyle = 3
