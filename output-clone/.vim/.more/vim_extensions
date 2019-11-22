@@ -4,6 +4,7 @@ set nocompatible
 filetype off
 
 " set the runtime path to include Vundle and initialize
+set rtp+=/usr/local/opt/fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -15,6 +16,8 @@ Plugin 'rhysd/vim-clang-format'
 " Emmet - HTML
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
+
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

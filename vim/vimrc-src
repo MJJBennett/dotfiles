@@ -22,6 +22,8 @@ nnoremap <Leader>j Lz.
 nnoremap <Leader>k Hz.
 nnoremap <Leader><Leader>j <C-W>j
 nnoremap <Leader><Leader>k <C-W>k
+nnoremap <Leader><Leader>l <C-W>l
+nnoremap <Leader><Leader>h <C-W>h
 
 " @ Keybinds > Extensions
 vnoremap <C-R><C-F> :ClangFormat<CR>
