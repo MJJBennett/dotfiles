@@ -28,6 +28,7 @@ nnoremap <Leader><Leader>h <C-W>h
 " @ Keybinds > Extensions
 vnoremap <C-R><C-F> :ClangFormat<CR>
 nnoremap <C-R><C-A> :ClangFormat<CR>
+nnoremap <C-J><C-A> :%!prettier %<CR>
 
 " @@ QOL things
 

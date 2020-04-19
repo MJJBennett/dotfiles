@@ -16,6 +16,7 @@ Plugin 'rhysd/vim-clang-format'
 " Emmet - HTML
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tell-k/vim-autopep8'
 
 Plugin 'junegunn/fzf.vim'
 
@@ -67,3 +68,9 @@ let g:clang_format#style_options = {
 
 " NetRW Configuration (Technically builtin, but hey)
 let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+
+" JavaScript prettifier
+autocmd FileType javascript setlocal equalprg=js-beautify\ --stdin
+autocmd FileType javascript setlocal equalprg=js-beautify\ --stdin
