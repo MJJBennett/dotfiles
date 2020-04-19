@@ -66,6 +66,10 @@ let g:clang_format#style_options = {
     \ "AlignConsecutiveAssignments" : "true",
     \ "Standard" : "C++11"}
 
+" Pep8 Format Configuration
+let g:autopep8_max_line_length=60
+let g:autopep8_disable_show_diff=1
+
 " NetRW Configuration (Technically builtin, but hey)
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
