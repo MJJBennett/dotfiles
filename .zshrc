@@ -45,7 +45,6 @@ plugins=(
 # Feels like it should probably go before or after everything else, not
 # here in the middle as it is currently.
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # this is awesome by the way
 . ~/.oh-my-zsh/plugins/z/z.sh
 
