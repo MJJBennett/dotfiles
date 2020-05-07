@@ -78,4 +78,3 @@ let g:netrw_browse_split = 4
 " JavaScript prettifier
 autocmd FileType javascript setlocal equalprg=js-beautify\ --stdin
 autocmd FileType javascript setlocal equalprg=js-beautify\ --stdin
-YCM is enabled in this Vim configuration. Disable with let g:loaded_youcompleteme = 1
