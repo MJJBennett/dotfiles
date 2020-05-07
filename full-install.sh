@@ -6,7 +6,7 @@
 
 # Prerequisites: git, zsh
 
-if ! type "$zsh" > /dev/null; then
+if ! type zsh > /dev/null; then
     echo "zsh is not installed. Install using your current package manager."
     exit 1
 fi
