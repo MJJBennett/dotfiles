@@ -8,7 +8,10 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # Can set to "random" for ...fun
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
+if [ -f ~/.dotfiles/custom_theme ]; then 
+    . ~/.dotfiles/custom_theme
+fi
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.

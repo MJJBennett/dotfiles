@@ -70,7 +70,14 @@ cp vim/vim_python ~/.vim/.more
 cp vim/vim_extensions ~/.vim/.more
 cp vim/vim_more output-clone/.vim/.more
 cp vim/vim_python output-clone/.vim/.more
-cp vim/vim_extensions output-clone/.vim/.more
+cp vim/vim_extensions ext.temp
+if [ "$(uname)" == "Darwin" ]; then
+    echo "YCM is enabled in this Vim configuration. Disable with let g:loaded_youcompleteme = 1" >> ext.temp
+else
+    echo "let g:loaded_youcompleteme = 1" >> ext.temp
+fi
+cp ext.temp output-clone/.vim/.more/vim_extensions
+rm ext.temp
 
 echo "Installing YouCompleteMe handler."
 # Install YouCompleteMe generic script.
