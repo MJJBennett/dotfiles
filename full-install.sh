@@ -39,6 +39,6 @@ wait
 
 ### Plugin Installation
 echo "Installing all Vim plugins."
-vim -c 'PluginInstall' -c 'q'
+vim -c 'PluginInstall' -c 'qa'
 
 echo "Full-install seems to have completed."
