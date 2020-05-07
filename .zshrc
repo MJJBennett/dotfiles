@@ -38,6 +38,7 @@ plugins=(
     history
     sudo
     yarn
+    zsh-syntax-highlighting
 )
 
 # Note - Might be worth investigating where exactly this source should go
