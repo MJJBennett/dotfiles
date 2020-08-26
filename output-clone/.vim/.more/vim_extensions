@@ -17,6 +17,7 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'rust-lang/rust.vim'
 
 Plugin 'junegunn/fzf.vim'
 
@@ -67,7 +68,7 @@ let g:clang_format#style_options = {
     \ "Standard" : "C++11"}
 
 " Pep8 Format Configuration
-let g:autopep8_max_line_length=60
+let g:autopep8_max_line_length=80
 let g:autopep8_disable_show_diff=1
 
 " NetRW Configuration (Technically builtin, but hey)
