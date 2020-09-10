@@ -13,6 +13,9 @@ if [ -f ~/.dotfiles/custom_theme ]; then
     . ~/.dotfiles/custom_theme
 fi
 
+# Just gonna throw this in reaaaal quick
+export _Z_DATA="$HOME/.dotfiles/z/zstore"
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:

@@ -100,6 +100,8 @@ touch ~/.dotfiles/old/.marker
 #     echo "Could not find a place to stick the sourcing of ~/.dotfiles/.custom_profile !"
 # fi
 
+mkdir -p ~/.dotfiles/z
+
 echo "Installing zshrc."
 cp .zshrc ~/
 
