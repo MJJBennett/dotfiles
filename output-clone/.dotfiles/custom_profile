@@ -4,3 +4,6 @@
 if [ -f ~/.dotfiles/local_profile ]; then 
     . ~/.dotfiles/local_profile
 fi
+if [ -f ~/.dotfiles/exports ]; then 
+    . ~/.dotfiles/exports
+fi

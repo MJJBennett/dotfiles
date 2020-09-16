@@ -35,7 +35,7 @@ autocmd FileType python noremap <buffer> <C-R><C-A> :call Autopep8()<CR>
 autocmd FileType rust noremap <buffer> <C-R><C-A> :RustFmt<CR>
 
 " Completer / IDE
-nnoremap <C-B> :YcmCompleter GoTo
+nnoremap <C-B> :YcmCompleter GoTo<CR>
 
 " @@ QOL things
 
