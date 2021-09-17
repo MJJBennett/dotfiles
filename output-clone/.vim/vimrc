@@ -9,6 +9,7 @@ let mapleader=" "
 nnoremap <Leader>o o<Esc>
 nnoremap <Leader>O O<Esc>
 inoremap jj <Esc>
+nnoremap ; :
 " Move based on visual (not actual) lines
 " nnoremap j g
 " nnoremap k gk
@@ -37,6 +38,8 @@ autocmd FileType rust noremap <buffer> <C-R><C-A> :RustFmt<CR>
 
 " Completer / IDE
 nnoremap <C-B> :YcmCompleter GoTo<CR>
+nnoremap <C-H>g :YcmCompleter GoTo<CR>
+nnoremap <C-H>d :YcmCompleter GetDoc<CR>
 
 " @@ QOL things
 

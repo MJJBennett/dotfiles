@@ -4,6 +4,7 @@
 mkdir -p ~/.vim/.more
 mkdir -p ~/.dotfiles/old/.dotfiles
 mkdir -p ~/.dotfiles/old/.vim/.more
+mkdir -p ~/.dotfiles/old/rolling
 
 # We need to construct the vimrc first -
 # In order to allow multiple build configurations,
@@ -15,6 +16,8 @@ cat vim/vimrc-sourcing-before > vimrc
 cat vim/vimrc-src >> vimrc
 cat vim/vimrc-sourcing-after >> vimrc
 
+#### BEGIN
+# Non-destructive commands; ignore for paranoia
 if [ ! -f ~/.dotfiles/old/.marker ]; then
 echo "Backing up current configuration files."
 # Back up current configuration before potential overwrites
@@ -48,7 +51,14 @@ fi
 if [ -e ~/.zshrc ]
     then cp ~/.zshrc ~/.dotfiles/old/.zshrc
 fi
+else # IF MARKER IS PRESENT
+    cp ~/.zshrc ~/.dotfiles/rolling/zshrc
 fi
+#### END
+
+####################################
+##### BEGIN DESTRUCTIVE COPIES #####
+####################################
 
 echo "Installing generic configuration files."
 # Install generic configuration. (Aliases mostly)
@@ -68,6 +78,13 @@ rm vimrc
 cp vim/vim_more ~/.vim/.more
 cp vim/vim_python ~/.vim/.more
 
+# Just adding this in right now because I think it might
+# be useful. It doesn't seem like a big deal to have sitting
+# around, and we'll source it last.
+if [ ! -f ~/.vim/.more/local_vim ]; then
+    touch ~/.vim/.more/local_vim
+fi
+
 # Special for YCM due to its finickiness
 cp vim/vim_extensions ext.temp
 if [ "$(uname)" == "Darwin" ]; then
@@ -79,9 +96,11 @@ fi
 cp ext.temp ~/.vim/.more/vim_extensions
 rm ext.temp
 
+### NON-DESTRUCTIVE
 cp vim/vim_more output-clone/.vim/.more
 cp vim/vim_python output-clone/.vim/.more
 cp vim/vim_extensions output-clone/.vim/.more
+###
 
 echo "Installing YouCompleteMe handler."
 # Install YouCompleteMe generic script.
@@ -89,6 +108,7 @@ cp vim/ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 cp vim/ycm_extra_conf.py output-clone/.vim/.ycm_extra_conf.py
 
 # Make a marker that this script has been run, so backups aren't made again.
+# Actually, it's so that we don't overwrite the user backups.
 touch ~/.dotfiles/old/.marker
 
 # if [ -f ~/.profile ]; then

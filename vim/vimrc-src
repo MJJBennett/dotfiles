@@ -8,6 +8,7 @@ let mapleader=" "
 nnoremap <Leader>o o<Esc>
 nnoremap <Leader>O O<Esc>
 inoremap jj <Esc>
+nnoremap ; :
 " Move based on visual (not actual) lines
 " nnoremap j g
 " nnoremap k gk
