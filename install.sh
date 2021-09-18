@@ -88,10 +88,10 @@ fi
 # Special for YCM due to its finickiness
 cp vim/vim_extensions ext.temp
 if [ "$(uname)" == "Darwin" ]; then
-    # It kinda looks like it's being enabled, here..?
-    echo "DISABLING YouCompleteMe."
+    echo "ENABLING YouCompleteMe."
     echo "\" YCM is enabled in this Vim configuration. Disable with let g:loaded_youcompleteme = 1" >> ext.temp
 else
+    echo "DISABLING YouCompleteMe."
     echo "let g:loaded_youcompleteme = 1" >> ext.temp
 fi
 cp ext.temp ~/.vim/.more/vim_extensions
