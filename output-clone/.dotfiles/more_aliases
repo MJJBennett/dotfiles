@@ -36,3 +36,34 @@ function replace {
         rg "$1" --files-with-matches | xargs sed -i 's/$1/$2/g'
     fi
 }
+
+#### BEGIN
+# Aliases imported from ~/.bash_aliases on mac
+alias la="ls -la"
+alias af="git add ."
+alias afc="git add . && git commit -m"
+alias afa="git add . && git commit --amend"
+
+alias p="git push"
+alias gp="git push"
+alias pu="git push -u origin HEAD"
+alias gpu="git push -u origin HEAD"
+
+alias gc="git commit -m"
+
+alias gri="git rebase -i"
+
+alias s="git status"
+alias gs="git status"
+
+alias l="git log"
+# alias gl="git log"
+
+alias dif="git diff"
+
+# alias vm="vim ~/.bash_aliases"
+# alias sm=". ~/.bash_aliases"
+# alias cm="cat ~/.bash_aliases"
+
+# alias scrabble="cd ~/programming/scratch/scrabble/ && python3 scrabble.py"
+#### END
