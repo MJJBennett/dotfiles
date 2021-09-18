@@ -37,6 +37,8 @@ autocmd FileType rust noremap <buffer> <C-R><C-A> :RustFmt<CR>
 
 " Completer / IDE
 nnoremap <C-B> :YcmCompleter GoTo<CR>
+nnoremap <C-H>g :YcmCompleter GoTo<CR>
+nnoremap <C-H>d :YcmCompleter GetDoc<CR>
 
 " @@ QOL things
 
