@@ -98,3 +98,4 @@ set mouse=a
 " Additional vim config sourcing after here
 source ~/.vim/.more/vim_python
 source ~/.vim/.more/vim_more
+source ~/.vim/.more/local_vim

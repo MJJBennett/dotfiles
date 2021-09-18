@@ -52,7 +52,7 @@ if [ -e ~/.zshrc ]
     then cp ~/.zshrc ~/.dotfiles/old/.zshrc
 fi
 else # IF MARKER IS PRESENT
-    cp ~/.zshrc ~/.dotfiles/rolling/zshrc
+    cp ~/.zshrc ~/.dotfiles/old/rolling/zshrc
 fi
 #### END
 

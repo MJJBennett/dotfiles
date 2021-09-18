@@ -9,7 +9,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
@@ -18,7 +19,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'rust-lang/rust.vim'
-Plugin 'neoclide/coc.nvim'
 
 Plugin 'junegunn/fzf.vim'
 

@@ -19,6 +19,7 @@ alias usage="du -h -d1"
 alias ze="vim ~/.zshrc"
 
 alias nv="nvim"
+alias vim="echo LOL"
 
 # This only works with gitify somewhere in the path
 function gch {
