@@ -3,7 +3,8 @@ let &packpath = &runtimepath
 source ~/.vim/vimrc
 
 " Extra NeoVim specific configuration.
-:set guicursor=i:block
+set guicursor=i:block
+set guicursor+=a:blinkon0
 
 " coc.nvim, see
 " https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/
