@@ -7,7 +7,7 @@ source ~/.vim/vimrc
 
 " coc.nvim, see
 " https://ianding.io/2019/07/29/configure-coc-nvim-for-c-c++-development/
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
