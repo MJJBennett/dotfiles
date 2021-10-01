@@ -1,3 +1,15 @@
+# General System Configuration
 export XDG_CONFIG_HOME="$HOME/.dotfiles/"
-export CARGO_HOME="$HOME/.dotfiles/cargo"
-export RUSTUP_HOME="$HOME/.dotfiles/rustup"
+
+##### RUST #####
+
+# Rust - Environment Variables
+export CARGO_HOME="$HOME/programming/install/cargo"
+export RUSTUP_HOME="$HOME/programming/install/rustup"
+# Rust - Paths
+export PATH="$PATH:$HOME/programming/install/cargo/bin"
+
+##### C++ #####
+
+# C++ - Tooling - Paths
+export PATH="$PATH:$HOME/programming/install/ccls/Release"

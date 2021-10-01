@@ -9,6 +9,9 @@ alias ccmake="cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 
 alias fcb="ccmake && make all && ctest --verbose"
 
+# Better make
+alias mk="make -j$(nproc)"
+
 # Rust Aliases
 alias cardoc="cargo doc --open --package "
 alias rusdoc="rustup doc"
