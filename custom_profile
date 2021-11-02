@@ -7,3 +7,8 @@ fi
 if [ -f ~/.dotfiles/exports ]; then 
     . ~/.dotfiles/exports
 fi
+
+# Let's start putting anything shell-agnostic in here, instead of in *rc
+
+# Sounds
+set bell-style none

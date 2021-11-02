@@ -44,6 +44,8 @@ plugins=(
     zsh-syntax-highlighting
 )
 
+unsetopt BEEP
+
 # Note - Might be worth investigating where exactly this source should go
 # Feels like it should probably go before or after everything else, not
 # here in the middle as it is currently.

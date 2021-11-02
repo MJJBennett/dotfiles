@@ -45,6 +45,9 @@ nnoremap <C-H>d :YcmCompleter GetDoc<CR>
 " @ Backspace
 set backspace=indent,eol,start
 
+" @ Sounds - disable beeping
+set vb t_vb=
+
 " @ Searching
 " Incremental search
 set incsearch

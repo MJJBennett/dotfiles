@@ -13,9 +13,18 @@ mkdir -p ~/.vim/bundle/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-Now run `vim`, then call `:PluginInstall`.
+Now run `nvim`, then call `:PluginInstall`.
 
 Finally, compile YouCompleteMe: `cd ~/.vim/bundle/YouCompleteMe/ && ./install.py --clang-completer` (may need to install `python-dev` via `apt` beforehand)
+
+More things to install:
+
+#### Coc plugins
+
+(Inside NeoVim)
+```
+:CocInstall coc-cmake
+```
 
 ### Terminal / Shell Configuration
 
