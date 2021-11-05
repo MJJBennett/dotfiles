@@ -13,6 +13,10 @@ mkdir -p "$HOME/.dotfiles/nvim"
 cp coc-settings.json "$HOME/.dotfiles/nvim/"
 cp init.nvim "$HOME/.dotfiles/nvim/"
 
+# REQUIRES TMUX 3.3+ - ANYTHING OLDER DOES NOT SUPPORT XDG_CONFIG_HOME
+# Ahh, tmux maintainers, making things complicated even after they added support...
+# Just copy things to ~/ and give up if the packaged tmux is <v3.3, I guess.
+# Conveniently, tmux also doesn't support --version, so...
 if [ ! -f "$HOME/.dotfiles/tmux/tmux.conf" ]; then
     cp tmux.conf "$HOME/.dotfiles/tmux/tmux.conf"
 fi

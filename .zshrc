@@ -24,12 +24,24 @@ export _Z_DATA="$HOME/.dotfiles/z/zstore"
 # see 'man strftime' for details.
 HIST_STAMPS="dd/mm/yyyy"
 
+# Some plugins require preconfiguration.
+# In the future, this should be moved to a ~/.dotfiles file.
+
+# Zsh-Vi-Mode (JeffreyTse) configuration
+function zvm_config() {
+    # ZVM_CURSOR_BLINKING_BLOCK could be used instead
+    # https://github.com/jeffreytse/zsh-vi-mode
+    # ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+    ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+    ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+}
+
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git 
-    vi-mode
+    zsh-vi-mode
     bundler
     dotenv
     osx

@@ -21,12 +21,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 wait
 
 ## ZSH - TODO More here
-echo "Installing zsh autosuggestions."
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-wait
-echo "Installing zsh syntax highlighting."
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-wait
+scripts/CloneZshPlugins.sh
 
 ## Vim
 
