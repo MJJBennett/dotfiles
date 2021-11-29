@@ -12,9 +12,7 @@ mkdir -p ~/.dotfiles/old/rolling
 # commands. This isn't really optimal, but as they say,
 # if it works, don't fix it until it causes a huge and
 # damaging inconvenience.
-cat vim/vimrc-sourcing-before > vimrc
-cat vim/vimrc-src >> vimrc
-cat vim/vimrc-sourcing-after >> vimrc
+scripts/GenerateVimrc.sh
 
 #### BEGIN
 # Non-destructive commands; ignore for paranoia
@@ -87,13 +85,13 @@ fi
 
 # Special for YCM due to its finickiness
 cp vim/vim_extensions ext.temp
-if [ "$(uname)" == "Darwin" ]; then
-    echo "ENABLING YouCompleteMe."
-    echo "\" YCM is enabled in this Vim configuration. Disable with let g:loaded_youcompleteme = 1" >> ext.temp
-else
+#if [ "$(uname)" == "Darwin" ]; then
+#    echo "ENABLING YouCompleteMe."
+#    echo "\" YCM is enabled in this Vim configuration. Disable with let g:loaded_youcompleteme = 1" >> ext.temp
+#else
     echo "DISABLING YouCompleteMe."
     echo "let g:loaded_youcompleteme = 1" >> ext.temp
-fi
+#fi
 cp ext.temp ~/.vim/.more/vim_extensions
 rm ext.temp
 

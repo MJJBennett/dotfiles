@@ -65,6 +65,10 @@ set smartindent
 set expandtab
 set clipboard+=unnamed
 
+" @ Also tab settings ;)
+nnoremap <Leader>th :tabprevious<CR>
+nnoremap <Leader>tl :tabnext<CR>
+
 " @ Appearance settings
 if !exists("g:syntax_on")
     syntax enable
@@ -87,14 +91,18 @@ highlight LineNr ctermbg=Gray
 highlight CursorLineNr ctermbg=Gray
 
 " @ Folding
-set foldenable
-set foldlevelstart=99
-" set foldnestmax=10
-nnoremap <Leader>f za
-vnoremap <Leader>f zf
-set foldmethod=indent
+if has('folding')
+    set foldenable
+    set foldlevelstart=99
+    " set foldnestmax=10
+    nnoremap <Leader>f za
+    vnoremap <Leader>f zf
+    set foldmethod=indent
+endif
 
 " Mouse!
-set mouse=a
+if has('mouse')
+    set mouse=a
+endif
 
 " Additional vim config sourcing after here

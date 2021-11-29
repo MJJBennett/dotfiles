@@ -44,7 +44,7 @@ plugins=(
     zsh-vi-mode
     bundler
     dotenv
-    osx
+    macos
     rake
     zsh-autosuggestions
     last-working-dir
@@ -66,7 +66,8 @@ source $ZSH/oh-my-zsh.sh
 . ~/.oh-my-zsh/plugins/z/z.sh
 
 # This is for the vi mode plugin - jj is remapped to esc 
-bindkey -M viins 'jj' vi-cmd-mode
+# Deprecated / commented out for now; remove after it works.
+# bindkey -M viins 'jj' vi-cmd-mode
 
 # Finally source everything else
 source ~/.dotfiles/custom_profile

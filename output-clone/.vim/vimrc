@@ -1,4 +1,15 @@
-source ~/.vim/.more/vim_extensions
+" Sometimes we are on a 'tiny' box where our vim is basically vi.
+" In those cases, if we don't have eval, we can't really do anything.
+" If we don't have eval, we actually can't even evaluate 'has' or if
+" statements in general. Fortunately, vim-tiny does recognize that it
+" would be ridiculously breaking to not do something for us here - so
+" it skips the entire block entirely.
+" If we have if statements but not eval, then we probably don't want
+" to source extensions anyways. Regardless, this is all kind of silly
+" and won't matter except in specific situations.
+if has('eval')
+    source ~/.vim/.more/vim_extensions
+endif
 " Initial sources here
 
 " @@ Things that must go at the start of the file.
@@ -46,6 +57,9 @@ nnoremap <C-H>d :YcmCompleter GetDoc<CR>
 " @ Backspace
 set backspace=indent,eol,start
 
+" @ Sounds - disable beeping
+set vb t_vb=
+
 " @ Searching
 " Incremental search
 set incsearch
@@ -62,6 +76,10 @@ set autoindent
 set smartindent
 set expandtab
 set clipboard+=unnamed
+
+" @ Also tab settings ;)
+nnoremap <Leader>th :tabprevious<CR>
+nnoremap <Leader>tl :tabnext<CR>
 
 " @ Appearance settings
 if !exists("g:syntax_on")
@@ -85,15 +103,19 @@ highlight LineNr ctermbg=Gray
 highlight CursorLineNr ctermbg=Gray
 
 " @ Folding
-set foldenable
-set foldlevelstart=99
-" set foldnestmax=10
-nnoremap <Leader>f za
-vnoremap <Leader>f zf
-set foldmethod=indent
+if has('folding')
+    set foldenable
+    set foldlevelstart=99
+    " set foldnestmax=10
+    nnoremap <Leader>f za
+    vnoremap <Leader>f zf
+    set foldmethod=indent
+endif
 
 " Mouse!
-set mouse=a
+if has('mouse')
+    set mouse=a
+endif
 
 " Additional vim config sourcing after here
 source ~/.vim/.more/vim_python

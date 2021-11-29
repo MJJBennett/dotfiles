@@ -1,9 +1,19 @@
 . ~/.dotfiles/git_aliases
 . ~/.dotfiles/more_aliases
 
-if [ -f ~/.dotfiles/local_profile ]; then 
-    . ~/.dotfiles/local_profile
-fi
 if [ -f ~/.dotfiles/exports ]; then 
     . ~/.dotfiles/exports
 fi
+
+# Let's start putting anything shell-agnostic in here, instead of in *rc
+
+# Sounds
+set bell-style none
+
+
+# This must be the last thing in this file.
+# Otherwise, it cannot overwrite things (e.g. exports from ~/.dotfiles/exports)
+if [ -f ~/.dotfiles/local_profile ]; then 
+    . ~/.dotfiles/local_profile
+fi
+### LAST LINE OF FILE ###

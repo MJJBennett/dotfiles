@@ -31,5 +31,6 @@
                 "buildDirectory": "build"
             }
         }
-    }
+    },
+    "coc.preferences.jumpCommand": "tabe"
 }
