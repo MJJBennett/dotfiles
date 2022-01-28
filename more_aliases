@@ -49,6 +49,30 @@ function replace {
     fi
 }
 
+### Very useful tools
+### Can also make nicer aliases with:
+### alias rg="rgc"
+### alias re="rge"
+function rgc() {
+    echo "$1" > "${XDG_CACHE_HOME:-$HOME/.cache}/.rgt-last"
+    rg "$1"
+}
+
+function rge() {
+    # TODO - Must add helper.py, lol.
+    # Ideally we just make it a bash script instead..
+    if [[ -f helper.py ]]; then
+        rg $(cat "${XDG_CACHE_HOME:-$HOME/.cache}/.rgt-last") > "${XDG_CACHE_HOME:-$HOME/.cache}/.rgt-results"
+        last_file=$(./helper.py --main --rge "$1")
+        if [ $? -eq 0 ]; then
+            nv "$last_file"
+        else
+            echo "$last_file"
+        fi
+    fi
+}
+###
+
 #### BEGIN
 # Aliases imported from ~/.bash_aliases on mac
 alias la="ls -la"
