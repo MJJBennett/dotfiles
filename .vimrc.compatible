@@ -8,6 +8,7 @@ let mapleader=" "
 nnoremap <Leader>o o<Esc>
 nnoremap <Leader>O O<Esc>
 inoremap jj <Esc>
+nnoremap ; :
 " Move based on visual (not actual) lines
 " nnoremap j g
 " nnoremap k gk
@@ -22,15 +23,30 @@ nnoremap <Leader>j Lz.
 nnoremap <Leader>k Hz.
 nnoremap <Leader><Leader>j <C-W>j
 nnoremap <Leader><Leader>k <C-W>k
+nnoremap <Leader><Leader>l <C-W>l
+nnoremap <Leader><Leader>h <C-W>h
 
 " @ Keybinds > Extensions
+
+" Autoformatters
 vnoremap <C-R><C-F> :ClangFormat<CR>
 nnoremap <C-R><C-A> :ClangFormat<CR>
+nnoremap <C-J><C-A> :%!prettier %<CR>
+autocmd FileType python noremap <buffer> <C-R><C-A> :call Autopep8()<CR>
+autocmd FileType rust noremap <buffer> <C-R><C-A> :RustFmt<CR>
+
+" Completer / IDE
+nnoremap <C-B> :YcmCompleter GoTo<CR>
+nnoremap <C-H>g :YcmCompleter GoTo<CR>
+nnoremap <C-H>d :YcmCompleter GetDoc<CR>
 
 " @@ QOL things
 
 " @ Backspace
 set backspace=indent,eol,start
+
+" @ Sounds - disable beeping
+set vb t_vb=
 
 " @ Searching
 " Incremental search
@@ -48,6 +64,10 @@ set autoindent
 set smartindent
 set expandtab
 set clipboard+=unnamed
+
+" @ Also tab settings ;)
+nnoremap <Leader>th :tabprevious<CR>
+nnoremap <Leader>tl :tabnext<CR>
 
 " @ Appearance settings
 if !exists("g:syntax_on")
@@ -71,21 +91,26 @@ highlight LineNr ctermbg=Gray
 highlight CursorLineNr ctermbg=Gray
 
 " @ Folding
-set foldenable
-set foldlevelstart=99
-" set foldnestmax=10
-nnoremap <Leader>f za
-vnoremap <Leader>f zf
-set foldmethod=indent
+if has('folding')
+    set foldenable
+    set foldlevelstart=99
+    " set foldnestmax=10
+    nnoremap <Leader>f za
+    vnoremap <Leader>f zf
+    set foldmethod=indent
+endif
 
 " Mouse!
-set mouse=a
+if has('mouse')
+    set mouse=a
+endif
 
 " Additional vim config sourcing after here
-" Basically, more vim stuff.
-" Why not?
+" VIM - Remaps
+" These maps overwrite all other maps, as they are added last.
 
 " au BufNewFile,BufRead *.md :set spell spelllang=en_ca<CR>
+au BufNewFile,BufRead *.asm :set ft=nasm
 
 " I'm claiming <Leader>c for my misc commands
 nnoremap <Leader>e :!
@@ -94,6 +119,7 @@ nnoremap <Leader>cw :!wc -w %<CR>
 " Huge address space!!!
 nnoremap <Leader>ccwt :!wt-start<CR>
 nnoremap <Leader>ccu :!curl -o ~/.vimrc https://raw.githubusercontent.com/MJJBennett/dotfiles/master/.vimrc.compatible
+nnoremap <Leader>ccf :20vs .<CR>
 " This makes s work as no-copy d
 nnoremap s "_d
 " Repeat previous macro
@@ -103,7 +129,9 @@ nnoremap <Leader>n i<CR><ESC>
 " Save files faster
 nnoremap <Leader>s :w<CR>
 
-set foldmethod=syntax
+if has('folding')
+    set foldmethod=syntax
+endif
 
 function FixQuotes()
     " This function fixes more than just quotes

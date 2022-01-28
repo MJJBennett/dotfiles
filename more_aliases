@@ -44,8 +44,8 @@ alias mac-psc="log show --predicate 'eventMessage contains \"Previous shutdown c
 alias mac-upt="sudo sntp -sS time.apple.com"
 
 function replace {
-    if [[ "$OSTYPE" != "darwin"* ]]; then
-        rg "$1" --files-with-matches | xargs sed -i 's/$1/$2/g'
+    if [[ '$OSTYPE' != 'darwin'* ]]; then
+        rg '$1' --files-with-matches | xargs sed -i 's/$1/$2/g'
     fi
 }
 
