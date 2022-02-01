@@ -1,0 +1,7 @@
+# Bash/Zsh aliases/etc for editor
+
+export EDITOR="nvim"
+function e() {
+    $EDITOR $($HOME/programming/install/last_edited.py "$@")
+}
+alias ce="$HOME/programming/install/last_edited.py"
