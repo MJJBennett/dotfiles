@@ -1,5 +1,9 @@
 # General System Configuration
+# Modified:
 export XDG_CONFIG_HOME="$HOME/.dotfiles/"
+
+# Not Modified:
+export XDG_DATA_HOME="$HOME/.local/share"
 
 ##### RUST #####
 
@@ -13,3 +17,9 @@ export PATH="$PATH:$HOME/programming/install/cargo/bin"
 
 # C++ - Tooling - Paths
 export PATH="$PATH:$HOME/programming/install/ccls/Release"
+
+##### MISC TOOLS #####
+
+# GPG
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GPG_TTY=$(tty)

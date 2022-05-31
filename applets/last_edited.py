@@ -24,7 +24,7 @@ def parsed(args):
         if arg == '--':
             skip = True
             continue
-        params.append(arg)
+        params.append(arg.strip('-'))
     return (params, norm)
 
 def get_paths_path():

@@ -25,6 +25,10 @@ if has('folding')
     set foldmethod=syntax
 endif
 
+" COPY TO CLIPBOARD
+" https://stackoverflow.com/questions/44480829
+vmap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
+
 function FixQuotes()
     " This function fixes more than just quotes
     " However, it is called 'FixQuotes'
@@ -35,3 +39,8 @@ function FixQuotes()
 endfunction
 
 nnoremap <Leader>fq :call FixQuotes()<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+""""" Custom things for: LSP / ETC """""
+""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>tgd :call CocActionAsync('jumpDefinition', 'tabedit')<CR>

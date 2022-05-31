@@ -18,6 +18,8 @@ Plugin 'rhysd/vim-clang-format'
 " Emmet - HTML
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
+" Gotta set up custom binds for this lol (TODO)
+" Plugin 'justinmk/vim-sneak'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'rust-lang/rust.vim'
 

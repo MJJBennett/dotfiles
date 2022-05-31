@@ -1,0 +1,9 @@
+# todo
+# rg -i todo
+
+# make it so you clone this to $DOTFILES_HOME
+# then we don't have to install files
+# we can inject vim stuff through sourcing or symlinks
+# way nicer, auto updating. like omz. diff is just there, etc. it's great
+
+f alias for finding things..?
