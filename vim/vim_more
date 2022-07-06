@@ -18,8 +18,12 @@ nnoremap s "_d
 nnoremap Q @@
 " Opposite of J
 nnoremap <Leader>n i<CR><ESC>
+" Easily enter block selection mode
+nnoremap <Leader>V <c-v>
 " Save files faster
 nnoremap <Leader>s :w<CR>
+" Vertical (horizontal) resize faster
+nnoremap <Leader><Leader>vr :vertical resize 
 
 if has('folding')
     set foldmethod=syntax
@@ -27,7 +31,7 @@ endif
 
 " COPY TO CLIPBOARD
 " https://stackoverflow.com/questions/44480829
-vmap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
+vmap <Leader>cs y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
 
 function FixQuotes()
     " This function fixes more than just quotes

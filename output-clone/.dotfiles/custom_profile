@@ -1,6 +1,9 @@
 . ~/.dotfiles/git_aliases
 . ~/.dotfiles/more_aliases
 
+# Functions!
+. ~/.dotfiles/functions/e_related.sh
+
 if [ -f ~/.dotfiles/exports ]; then 
     . ~/.dotfiles/exports
 fi

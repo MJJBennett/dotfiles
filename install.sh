@@ -66,6 +66,7 @@ cp custom_profile ~/.dotfiles
 cp custom_profile output-clone/.dotfiles
 cp more_aliases ~/.dotfiles
 cp more_aliases output-clone/.dotfiles
+cp -r functions ~/.dotfiles
 
 echo "Installing Vim configuration files."
 # Install Vim configuration.

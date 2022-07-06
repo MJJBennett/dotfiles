@@ -17,6 +17,7 @@ alias fcb="ccmake && make all && ctest --verbose"
 #else
 #    alias mk="make -j$(nproc)"
 #fi
+alias mk="make -j$(nproc)"
 
 # Rust Aliases
 alias cardoc="cargo doc --open --package "
@@ -45,9 +46,54 @@ alias mac-upt="sudo sntp -sS time.apple.com"
 
 function replace {
     if [[ "$OSTYPE" != "darwin"* ]]; then
-        rg "$1" --files-with-matches | xargs sed -i 's/$1/$2/g'
+        rg "$1" --files-with-matches | xargs sed -i "s/$1/$2/g"
     fi
 }
+
+### Very useful tools
+### Can also make nicer aliases with:
+### alias rg="rgc"
+### alias re="rge"
+function rgc() {
+    echo "$1" > "${XDG_CACHE_HOME:-$HOME/.cache}/.rgt-last"
+    rg "$1"
+}
+
+function rge() {
+    # TODO - Must add helper.py, lol.
+    # Ideally we just make it a bash script instead..
+    if [[ -f helper.py ]]; then
+        rg $(cat "${XDG_CACHE_HOME:-$HOME/.cache}/.rgt-last") > "${XDG_CACHE_HOME:-$HOME/.cache}/.rgt-results"
+        last_file=$(./helper.py --main --rge "$1")
+        if [ $? -eq 0 ]; then
+            nv "$last_file"
+        else
+            echo "$last_file"
+        fi
+    fi
+}
+
+# Second attempt at these. The originals were a bit overspecialized.
+# This is technically really slow. Ideally we would steal the output and parse it while throwing it into a file.
+# That's probably the next thing to do.
+function rgc2() {
+    rg "$@" --files-with-matches > "${XDG_CACHE_HOME:-$HOME/.cache}/.rg-results"
+    rg "$@"
+}
+
+function rge2() {
+    # TODO - Must add rge.py, lol.
+    # Ideally we just make it a bash script instead..
+    if [[ -f rge.py ]]; then
+        last_file=$(./rge.py "${XDG_CACHE_HOME:-$HOME/.cache}/.rg-results")
+        if [ $? -eq 0 ]; then
+            nv "$last_file"
+        else
+            echo "$last_file"
+        fi
+    fi
+}
+###
 
 #### BEGIN
 # Aliases imported from ~/.bash_aliases on mac

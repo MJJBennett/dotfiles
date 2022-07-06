@@ -1,4 +1,7 @@
 # General System Configuration
+# Paths
+export PATH="$HOME/.local/bin/:$PATH"
+
 # Modified:
 export XDG_CONFIG_HOME="$HOME/.dotfiles/"
 

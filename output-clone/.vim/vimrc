@@ -102,6 +102,9 @@ augroup END
 highlight LineNr ctermbg=Gray
 highlight CursorLineNr ctermbg=Gray
 
+" You can override this in ~/.vim/.more/local_vim
+set bg=light
+
 " @ Folding
 if has('folding')
     set foldenable
@@ -121,3 +124,4 @@ endif
 source ~/.vim/.more/vim_python
 source ~/.vim/.more/vim_more
 source ~/.vim/.more/local_vim
+source ~/.vim/scripts/aliases.vim

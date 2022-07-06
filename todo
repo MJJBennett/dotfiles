@@ -7,3 +7,11 @@
 # way nicer, auto updating. like omz. diff is just there, etc. it's great
 
 f alias for finding things..?
+
+
+
+# brand new machine notes
+- you need gcc for ripgrep
+- install rust please
+- there are way too many scripts!! consolidate/simplify.
+- need to install oh-my-zsh FIRST before installing the plugins

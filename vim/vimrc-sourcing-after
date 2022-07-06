@@ -1,3 +1,4 @@
 source ~/.vim/.more/vim_python
 source ~/.vim/.more/vim_more
 source ~/.vim/.more/local_vim
+source ~/.vim/scripts/aliases.vim
