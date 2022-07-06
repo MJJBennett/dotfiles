@@ -1,3 +1,7 @@
+# Things we inject into the environment.
+# alias debug_print="echo"
+function debug_print() { :; }
+
 . ~/.dotfiles/git_aliases
 . ~/.dotfiles/more_aliases
 
