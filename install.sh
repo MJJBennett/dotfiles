@@ -126,4 +126,4 @@ mkdir -p ~/.dotfiles/z
 echo "Installing zshrc."
 cp .zshrc ~/
 
-echo "Complete install by putting `. ~/.dotfiles/custom_profile` into relevant .rc file."
+echo "Complete install by putting '. ~/.dotfiles/custom_profile' into relevant .rc file."
