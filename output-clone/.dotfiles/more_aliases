@@ -17,7 +17,8 @@ alias fcb="ccmake && make all && ctest --verbose"
 #else
 #    alias mk="make -j$(nproc)"
 #fi
-alias mk="make -j$(nproc)"
+# this immediately calls nproc and that doesn't exist on my macbook sooooo goodbye
+# alias mk="make -j$(nproc)"
 
 # Rust Aliases
 alias cardoc="cargo doc --open --package "

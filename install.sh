@@ -84,6 +84,9 @@ if [ ! -f ~/.vim/.more/local_vim ]; then
     touch ~/.vim/.more/local_vim
 fi
 
+# another dumb thing
+vim/scripts/install.sh
+
 # Special for YCM due to its finickiness
 cp vim/vim_extensions ext.temp
 #if [ "$(uname)" == "Darwin" ]; then

@@ -34,10 +34,7 @@ nnoremap <C-R><C-A> :ClangFormat<CR>
 nnoremap <C-J><C-A> :%!prettier %<CR>
 autocmd FileType python noremap <buffer> <C-R><C-A> :call Autopep8()<CR>
 autocmd FileType rust noremap <buffer> <C-R><C-A> :RustFmt<CR>
-exec 'source' vim_scripts_path . '/autocmake.vim'
-augroup CMakeListsAUGroup
-  au! BufRead,BufNewFile,BufEnter *CMakeLists.txt,*.cmake noremap <buffer> <C-R><C-A> :call AutoCMake()<CR>
-augroup END
+" cmake-format remap is done in aliases.vim
 
 " Completer / IDE
 nnoremap <C-B> :YcmCompleter GoTo<CR>
