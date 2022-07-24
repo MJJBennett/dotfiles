@@ -20,6 +20,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 " Gotta set up custom binds for this lol (TODO)
 " Plugin 'justinmk/vim-sneak'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'rust-lang/rust.vim'
 
