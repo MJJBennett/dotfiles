@@ -8,6 +8,7 @@ alias plog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 alias plog2="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gl="plog"
 alias b="git branch"
+alias bd="git branch -d"
 
 alias fall="git fetch --all"
 alias pull="git pull"
