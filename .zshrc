@@ -4,8 +4,8 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # Can set to "random" for ...fun
 ZSH_THEME="robbyrussell"
-if [ -f ~/.dotfiles/custom_theme ]; then 
-    . ~/.dotfiles/custom_theme
+if [ -f ~/.dotfiles/local_theme ]; then 
+    . ~/.dotfiles/local_theme
 fi
 
 if [ "$ZSH_THEME" = "powerlevel10k/powerlevel10k" ]; then

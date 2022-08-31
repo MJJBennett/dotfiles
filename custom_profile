@@ -4,14 +4,10 @@ function debug_print() { :; }
 
 . ~/.dotfiles/repo/git_aliases
 . ~/.dotfiles/repo/more_aliases
-. ~/.dotfiles/repo/custom_exports
+. ~/.dotfiles/repo/exports
 
 # Functions!
 . ~/.dotfiles/repo/functions/e_related.sh
-
-if [ -f ~/.dotfiles/custom_exports ]; then 
-    . ~/.dotfiles/custom_exports
-fi
 
 # Let's start putting anything shell-agnostic in here, instead of in *rc
 
@@ -20,7 +16,10 @@ set bell-style none
 
 
 # This must be the last thing in this file.
-# Otherwise, it cannot overwrite things (e.g. exports from ~/.dotfiles/exports)
+# Otherwise, it cannot overwrite things (e.g. exports from ~/.dotfiles/repo/exports)
+if [ -f ~/.dotfiles/local_exports ]; then 
+    . ~/.dotfiles/local_exports
+fi
 if [ -f ~/.dotfiles/local_profile ]; then 
     . ~/.dotfiles/local_profile
 fi
