@@ -1,5 +1,9 @@
 ## Vim / Terminal Configuration Files
 
+### New Installation..?
+
+`mkdir -p ~/.dotfiles && git clone <repo> ~/.dotfiles/repo`
+
 ### Installation
 
 Running `install.sh` is simple but may move around pre-existing configurations. Best for setting up a new machine.

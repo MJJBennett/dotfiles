@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function dotdif
 {
     diff "$1" ~/.dotfiles/"$1";

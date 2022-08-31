@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # bindkey -M viins 'jj' vi-cmd-mode
 
 # Finally source everything else
-source ~/.dotfiles/custom_profile
+source ~/.dotfiles/repo/custom_profile
 
 if [ "$ZSH_THEME" = "powerlevel10k/powerlevel10k" ]; then
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

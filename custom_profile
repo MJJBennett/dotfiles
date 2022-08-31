@@ -2,14 +2,15 @@
 # alias debug_print="echo"
 function debug_print() { :; }
 
-. ~/.dotfiles/git_aliases
-. ~/.dotfiles/more_aliases
+. ~/.dotfiles/repo/git_aliases
+. ~/.dotfiles/repo/more_aliases
+. ~/.dotfiles/repo/custom_exports
 
 # Functions!
-. ~/.dotfiles/functions/e_related.sh
+. ~/.dotfiles/repo/functions/e_related.sh
 
-if [ -f ~/.dotfiles/exports ]; then 
-    . ~/.dotfiles/exports
+if [ -f ~/.dotfiles/custom_exports ]; then 
+    . ~/.dotfiles/custom_exports
 fi
 
 # Let's start putting anything shell-agnostic in here, instead of in *rc

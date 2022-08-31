@@ -8,7 +8,9 @@
 
 f alias for finding things..?
 
+rename all vim files to *.vim (for vim syntax)
 
+this should be $XDG_CONFIG_DIR/repo or /dotfiles
 
 # brand new machine notes
 - you need gcc for ripgrep
