@@ -67,8 +67,12 @@ set expandtab
 set clipboard+=unnamed
 
 " @ Also tab settings ;)
-nnoremap <Leader>th :tabprevious<CR>
-nnoremap <Leader>tl :tabnext<CR>
+"nnoremap <Leader>th :tabprevious<CR>
+"nnoremap <Leader>tl :tabnext<CR>
+nnoremap <silent> <Leader>th <Cmd>BufferPrevious<CR>
+nnoremap <silent> <Leader>tl <Cmd>BufferNext<CR>
+nnoremap <silent> <Leader>tj <Cmd>BufferPick<CR>
+nnoremap <silent> <Leader>tk <Cmd>BufferClose<CR>
 
 " @ Appearance settings
 if !exists("g:syntax_on")

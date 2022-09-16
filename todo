@@ -6,6 +6,10 @@
 # we can inject vim stuff through sourcing or symlinks
 # way nicer, auto updating. like omz. diff is just there, etc. it's great
 
+try out SmiteshP/nvim-navic?
+
+add config from lewis6991/gitsigns.nvim
+
 f alias for finding things..?
 
 rename all vim files to *.vim (for vim syntax)

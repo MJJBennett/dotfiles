@@ -25,6 +25,16 @@ nnoremap <Leader>s :w<CR>
 " Vertical (horizontal) resize faster
 nnoremap <Leader><Leader>vr :vertical resize 
 
+fun! SetupCommandAlias(from, to)
+  exec 'cnoreabbrev <expr> '.a:from
+        \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:from.'")'
+        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
+endfun
+call SetupCommandAlias("W","w")
+call SetupCommandAlias("Wq","wq")
+call SetupCommandAlias("WQ","wq")
+call SetupCommandAlias("Q","q")
+
 if has('folding')
     set foldmethod=syntax
 endif
@@ -48,3 +58,5 @@ nnoremap <Leader>fq :call FixQuotes()<CR>
 """"" Custom things for: LSP / ETC """""
 """"""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>tgd :call CocActionAsync('jumpDefinition', 'tabedit')<CR>
+
+nnoremap <Leader>gb :Gitsigns toggle_current_line_blame<CR>

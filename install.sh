@@ -20,3 +20,5 @@ mkdir -p ~/.dotfiles/z
 
 echo "Installing zshrc."
 safe_overwrite ".zshrc" "$HOME/.zshrc"
+
+git config --global init.defaultBranch main

@@ -21,7 +21,6 @@ BASE_DIR="$(dirname $0)/.."
 cd "${BASE_DIR}"
 scripts/GenerateVimrc.sh
 cp vimrc ~/.vim # Install Vim configuration.
-cp vimrc "output-clone/.vim"
 rm vimrc # Delete vimrc (it's generated in this script anyways)
 
 cd vim
@@ -40,27 +39,4 @@ fi
 
 scripts/install.sh
 
-# Special for YCM due to its finickiness
-cp vim_extensions ext.temp
-#if [ "$(uname)" == "Darwin" ]; then
-#    echo "ENABLING YouCompleteMe."
-#    echo "\" YCM is enabled in this Vim configuration. Disable with let g:loaded_youcompleteme = 1" >> ext.temp
-#else
-    echo "DISABLING YouCompleteMe."
-    echo "let g:loaded_youcompleteme = 1" >> ext.temp
-#fi
-cp ext.temp ~/.vim/.more/vim_extensions
-rm ext.temp
-
-### NON-DESTRUCTIVE
-# we're done with this for now I think. kinda weird
-# we'd have to do this in an expandable way for it to be worthwhile
-#cp vim_more "${BASED}/../output-clone/.vim/.more"
-#cp vim_python "${BASED}/../output-clone/.vim/.more"
-#cp vim_extensions "${BASED}/../output-clone/.vim/.more"
-#cp ycm_extra_conf.py "${BASED}/../output-clone/.vim/.ycm_extra_conf.py"
-###
-
-echo "Installing YouCompleteMe handler."
-# Install YouCompleteMe generic script.
-cp ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+cp vim_extensions ~/.vim/.more/vim_extensions

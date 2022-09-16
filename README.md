@@ -8,18 +8,19 @@
 
 Running `install.sh` is simple but may move around pre-existing configurations. Best for setting up a new machine.
 
-Otherwise, manually copying files as noted in `install.sh` will work fine.
+Otherwise, manually copying files as noted in `install.sh` will work fine. Use vim/install.sh to just install Vim. **This does not install init.vim at present.**
 
-Before running Vim, install vundle:
+Before running Vim, install vim-plug:
 
 ```
-mkdir -p ~/.vim/bundle/ 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-Now run `nvim`, then call `:PluginInstall`.
+Now run `nvim`, then call `:PlugInstall`.
 
-Finally, compile YouCompleteMe: `cd ~/.vim/bundle/YouCompleteMe/ && ./install.py --clang-completer` (may need to install `python-dev` via `apt` beforehand)
+Note: There's a weird bug in the version we currently have to use of Catppuccin. Remove the print statements in:
+`~/.vim/bundle/catppuccin/lua/lib/ui.lua`
 
 More things to install:
 

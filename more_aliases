@@ -126,3 +126,29 @@ alias dif="git diff"
 
 # alias scrabble="cd ~/programming/scratch/scrabble/ && python3 scrabble.py"
 #### END
+
+# TODO - Improve our setup for FZF.
+# However, this does work for now.
+# Note: Seems different systems have different names for fd-find. Very cool.
+# Just do ln -s $(which fdfind) ~/.local/bin/fd
+export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+function fv {
+    FILENAME="$(fzf)"
+    if [ "$?" -ne 0 ]
+    then
+        return 1
+    fi
+    nvim "$FILENAME"
+}
+
+function efv {
+    FILENAME="$(fzf)"
+    if [ "$?" -ne 0 ]
+    then
+        return 1
+    fi
+    e "$FILENAME"
+}

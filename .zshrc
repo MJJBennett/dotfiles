@@ -8,6 +8,8 @@ if [ -f ~/.dotfiles/local_theme ]; then
     . ~/.dotfiles/local_theme
 fi
 
+export COLORTERM=truecolor
+
 if [ "$ZSH_THEME" = "powerlevel10k/powerlevel10k" ]; then
     # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
     # Initialization code that may require console input (password prompts, [y/n]
