@@ -5,6 +5,7 @@ function debug_print() { :; }
 . ~/.dotfiles/repo/git_aliases
 . ~/.dotfiles/repo/more_aliases
 . ~/.dotfiles/repo/exports
+. ~/.dotfiles/repo/profile.sh
 
 # Functions!
 . ~/.dotfiles/repo/functions/e_related.sh

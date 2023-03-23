@@ -120,6 +120,8 @@ alias l="git log"
 
 alias dif="git diff"
 
+alias whi="whence -vf"
+
 # alias vm="vim ~/.bash_aliases"
 # alias sm=". ~/.bash_aliases"
 # alias cm="cat ~/.bash_aliases"
@@ -136,7 +138,7 @@ export FZF_DEFAULT_OPTS="--ansi"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 function fv {
-    FILENAME="$(fzf)"
+    FILENAME="$(fzf --preview 'bat --theme=Coldark-Cold --style=numbers --color=always --line-range :500 {}')"
     if [ "$?" -ne 0 ]
     then
         return 1
@@ -145,7 +147,7 @@ function fv {
 }
 
 function efv {
-    FILENAME="$(fzf)"
+    FILENAME="$(fzf --preview 'bat --theme=Coldark-Cold --style=numbers --color=always --line-range :500 {}')"
     if [ "$?" -ne 0 ]
     then
         return 1

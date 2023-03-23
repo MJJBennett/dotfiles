@@ -1,3 +1,10 @@
+if [ -d /usr/lib/wsl/ ]; then
+    # IMPORTANT: PATH CONFIGURATION
+    # Because we want to overwrite the user's path whenever we load in. Otherwise we have issues.
+    # Don't do this outside of WSL (or tmux?)
+    export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/snap/bin"
+fi
+
 ##########################################################################################
 ########################### THEMES CONFIGURATION #########################################
 ##########################################################################################
@@ -69,6 +76,7 @@ plugins=(
     sudo
     yarn
     zsh-syntax-highlighting
+    z
 )
 
 unsetopt BEEP
@@ -77,8 +85,6 @@ unsetopt BEEP
 # Feels like it should probably go before or after everything else, not
 # here in the middle as it is currently.
 source $ZSH/oh-my-zsh.sh
-# this is awesome by the way
-. ~/.oh-my-zsh/plugins/z/z.sh
 
 # This is for the vi mode plugin - jj is remapped to esc 
 # Deprecated / commented out for now; remove after it works.

@@ -41,7 +41,7 @@ endif
 
 " COPY TO CLIPBOARD
 " https://stackoverflow.com/questions/44480829
-vmap <Leader>cs y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
+vmap <Leader>cs y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| /mnt/c/Windows/System32/clip.exe <CR><CR>
 
 function FixQuotes()
     " This function fixes more than just quotes
@@ -53,6 +53,8 @@ function FixQuotes()
 endfunction
 
 nnoremap <Leader>fq :call FixQuotes()<CR>
+
+nnoremap <Leader>fv :Files<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 """"" Custom things for: LSP / ETC """""

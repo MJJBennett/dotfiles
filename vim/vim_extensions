@@ -21,7 +21,7 @@ Plug 'tell-k/vim-autopep8'
 Plug 'rust-lang/rust.vim'
 
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'catppuccin/nvim', {'as': 'catppuccin', 'do': 'CatppuccinCompile', 'tag': 'v0.2'}
+Plug 'catppuccin/nvim', {'as': 'catppuccin', 'tag': 'v0.2'}
 " EdenEast/nightfox.nvim
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
