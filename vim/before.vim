@@ -8,5 +8,5 @@
 " to source extensions anyways. Regardless, this is all kind of silly
 " and won't matter except in specific situations.
 if has('eval')
-    source ~/.vim/.more/vim_extensions
+    source ~/.vim/.more/extensions.vim
 endif

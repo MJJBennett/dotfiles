@@ -27,16 +27,16 @@ cd vim
 
 mkdir -p ~/.vim/.more
 
-cp vim_more ~/.vim/.more
-cp vim_python ~/.vim/.more
+cp more.vim ~/.vim/.more
+cp python.vim ~/.vim/.more
 
 # Just adding this in right now because I think it might
 # be useful. It doesn't seem like a big deal to have sitting
 # around, and we'll source it last.
-if [ ! -f ~/.vim/.more/local_vim ]; then
-    touch ~/.vim/.more/local_vim
+if [ ! -f ~/.vim/.more/local.vim ]; then
+    touch ~/.vim/.more/local.vim
 fi
 
 scripts/install.sh
 
-cp vim_extensions ~/.vim/.more/vim_extensions
+cp extensions.vim ~/.vim/.more/extensions.vim

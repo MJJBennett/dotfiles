@@ -9,9 +9,7 @@ dotdif git_aliases
 dotdif custom_profile
 dotdif more_aliases
 
-diff vim/vimrc-src ~/.vim/vimrc
-diff vim/vim_more ~/.vim/.more/vim_more
-diff vim/vim_python ~/.vim/.more/vim_python
-diff vim/vim_extensions ~/.vim/.more/vim_extensions
-
-diff vim/ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+diff vim/src.vim ~/.vim/vimrc
+diff vim/more.vim ~/.vim/.more/more.vim
+diff vim/python.vim ~/.vim/.more/python.vim
+diff vim/extensions.vim ~/.vim/.more/extensions.vim

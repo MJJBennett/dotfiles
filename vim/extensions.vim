@@ -81,14 +81,17 @@ require("catppuccin").setup({
         gitsigns = true,
         barbar = true,
         lsp_trouble = true,
+        coc_nvim = true,
     }
 })
 
 require("colorizer").setup()
 require("gitsigns").setup()
 
+local ctp_feline = require('catppuccin.groups.integrations.feline')
+
 require("feline").setup({
-    components = require('catppuccin.core.integrations.feline'),
+    components = ctp_feline.get(),
 })
 
 require("trouble").setup()
