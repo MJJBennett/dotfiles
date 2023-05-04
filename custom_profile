@@ -18,10 +18,10 @@ set bell-style none
 
 # This must be the last thing in this file.
 # Otherwise, it cannot overwrite things (e.g. exports from ~/.config/dotfiles/exports)
-if [ -f ~/.dotfiles/local_exports ]; then 
+if [ -f ~/.config/local_exports ]; then 
     . ~/.config/local_exports
 fi
-if [ -f ~/.dotfiles/local_profile ]; then 
+if [ -f ~/.config/local_profile ]; then 
     . ~/.config/local_profile
 fi
 ### LAST LINE OF FILE ###

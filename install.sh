@@ -16,7 +16,7 @@ echo "Installing Vim configuration files."
 vim/install.sh
 
 # Make z happy (happier...)
-mkdir -p ~/.dotfiles/z
+mkdir -p ~/.config/z
 
 echo "Installing zshrc."
 safe_overwrite ".zshrc" "$HOME/.zshrc"

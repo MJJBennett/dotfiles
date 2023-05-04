@@ -11,8 +11,8 @@ fi
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # Can set to "random" for ...fun
 ZSH_THEME="robbyrussell"
-if [ -f ~/.dotfiles/local_theme ]; then 
-    . ~/.dotfiles/local_theme
+if [ -f ~/.config/local_theme ]; then 
+    . ~/.config/local_theme
 fi
 
 export COLORTERM=truecolor
@@ -36,7 +36,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # Just gonna throw this in reaaaal quick
-export _Z_DATA="$HOME/.dotfiles/z/zstore"
+export _Z_DATA="$HOME/.config/z/zstore"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -47,7 +47,7 @@ export _Z_DATA="$HOME/.dotfiles/z/zstore"
 HIST_STAMPS="dd/mm/yyyy"
 
 # Some plugins require preconfiguration.
-# In the future, this should be moved to a ~/.dotfiles file.
+# In the future, this should be moved to a ~/.config file.
 
 # Zsh-Vi-Mode (JeffreyTse) configuration
 function zvm_config() {
@@ -91,7 +91,7 @@ source $ZSH/oh-my-zsh.sh
 # bindkey -M viins 'jj' vi-cmd-mode
 
 # Finally source everything else
-source ~/.dotfiles/repo/custom_profile
+source ~/.config/dotfiles/custom_profile
 
 if [ "$ZSH_THEME" = "powerlevel10k/powerlevel10k" ]; then
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
