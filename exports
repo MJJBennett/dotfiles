@@ -2,8 +2,8 @@
 # Paths
 export PATH="$HOME/.local/bin/:$PATH"
 
-# Modified:
-export XDG_CONFIG_HOME="$HOME/.dotfiles/"
+# No Longer Modified:
+export XDG_CONFIG_HOME="$HOME/.config/"
 
 # Not Modified:
 export XDG_DATA_HOME="$HOME/.local/share"

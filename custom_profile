@@ -2,13 +2,13 @@
 # alias debug_print="echo"
 function debug_print() { :; }
 
-. ~/.dotfiles/repo/git_aliases
-. ~/.dotfiles/repo/more_aliases
-. ~/.dotfiles/repo/exports
-. ~/.dotfiles/repo/profile.sh
+. ~/.config/dotfiles/git_aliases
+. ~/.config/dotfiles/more_aliases
+. ~/.config/dotfiles/exports
+. ~/.config/dotfiles/profile.sh
 
 # Functions!
-. ~/.dotfiles/repo/functions/e_related.sh
+. ~/.config/dotfiles/functions/e_related.sh
 
 # Let's start putting anything shell-agnostic in here, instead of in *rc
 
@@ -17,11 +17,11 @@ set bell-style none
 
 
 # This must be the last thing in this file.
-# Otherwise, it cannot overwrite things (e.g. exports from ~/.dotfiles/repo/exports)
+# Otherwise, it cannot overwrite things (e.g. exports from ~/.config/dotfiles/exports)
 if [ -f ~/.dotfiles/local_exports ]; then 
-    . ~/.dotfiles/local_exports
+    . ~/.config/local_exports
 fi
 if [ -f ~/.dotfiles/local_profile ]; then 
-    . ~/.dotfiles/local_profile
+    . ~/.config/local_profile
 fi
 ### LAST LINE OF FILE ###

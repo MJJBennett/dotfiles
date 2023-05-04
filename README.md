@@ -2,7 +2,7 @@
 
 ### New Installation..?
 
-`mkdir -p ~/.dotfiles && git clone <repo> ~/.dotfiles/repo`
+`mkdir -p ~/.config && git clone <repo> ~/.config/`
 
 ### Installation
 
