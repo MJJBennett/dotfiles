@@ -17,6 +17,8 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 " Spelling
 nnoremap <Leader>sp :set spell spelllang=en_ca<CR>
 nnoremap <Leader>w z=
+" Colemak
+nnoremap <Leader><C-K> :so ~/.vim/colemak.vim<CR>
 
 " @ Keybinds > Movement
 nnoremap <Leader>j Lz.
@@ -32,7 +34,7 @@ nnoremap <Leader><Leader>h <C-W>h
 vnoremap <C-R><C-F> :ClangFormat<CR>
 nnoremap <C-R><C-A> :ClangFormat<CR>
 nnoremap <C-J><C-A> :%!prettier %<CR>
-autocmd FileType python noremap <buffer> <C-R><C-A> :call Autopep8()<CR>
+autocmd FileType python noremap <buffer> <C-R><C-A> :CocCommand prettier.formatFile<CR>
 autocmd FileType rust noremap <buffer> <C-R><C-A> :RustFmt<CR>
 " cmake-format remap is done in aliases.vim
 

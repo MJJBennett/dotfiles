@@ -36,4 +36,5 @@
     "#coc.preferences.jumpCommand": "tabe",
     "prettier.tabWidth": 4,
     "notification.statusLineProgress": false
+    "#suggest.enablePreselect": false,
 }

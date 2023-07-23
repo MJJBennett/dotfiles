@@ -25,6 +25,8 @@ rm vimrc # Delete vimrc (it's generated in this script anyways)
 
 cd vim
 
+cp colemak.vim ~/.vim
+
 mkdir -p ~/.vim/.more
 
 cp more.vim ~/.vim/.more
