@@ -26,14 +26,16 @@ scripts/CloneZshPlugins.sh
 ## Vim
 
 ### Vundle
-echo "Installing Vundle."
-mkdir -p ~/.vim/bundle/
-wait
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-wait
+#echo "Installing Vundle."
+#mkdir -p ~/.vim/bundle/
+#wait
+#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#wait
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 ### Plugin Installation
 echo "Installing all Vim plugins."
-vim -c 'PluginInstall' -c 'qa'
+nvim -c 'PlugInstall' -c 'qa'
 
 echo "Full-install seems to have completed."
