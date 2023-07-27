@@ -42,3 +42,5 @@ fi
 scripts/install.sh
 
 cp extensions.vim ~/.vim/.more/extensions.vim
+
+echo ":CocInstall coc-pyright"
