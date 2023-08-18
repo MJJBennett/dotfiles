@@ -21,5 +21,10 @@ this should be $XDG_CONFIG_DIR/repo or /dotfiles
 - install rust please
 - there are way too many scripts!! consolidate/simplify.
 - need to install oh-my-zsh FIRST before installing the plugins
-
 - coc config: notification.statusLineProgress: false
+
+https://github.com/romkatv/powerlevel10k/issues/1003
+tmuxcheatsheet.com
+garcia5/dotfiles
+
+folke/lazy.nvim

@@ -155,3 +155,6 @@ require("feline").setup({
 EOF
 
 colorscheme catppuccin-latte
+
+" Some coc things! :)
+let g:coc_global_extensions = ['coc-pyright', 'coc-rust-analyzer', 'coc-cmake', 'coc-prettier']

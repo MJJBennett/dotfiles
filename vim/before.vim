@@ -8,5 +8,10 @@
 " to source extensions anyways. Regardless, this is all kind of silly
 " and won't matter except in specific situations.
 if has('eval')
-    source ~/.vim/.more/extensions.vim
+    " don't load extensions unless we have vim-plug
+    " idk if this works, untested I guess
+    runtime autoload/plug.vim
+    if exists('*plug#begin')
+        source ~/.vim/.more/extensions.vim
+    endif
 endif
