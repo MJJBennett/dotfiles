@@ -26,3 +26,7 @@ export PATH="$PATH:$HOME/programming/install/ccls/Release"
 # GPG
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GPG_TTY=$(tty)
+
+# Improve our home directory - random things.
+# Some weird thing to help man work smoother for nobody idk
+export LESSHISTFILE=-
