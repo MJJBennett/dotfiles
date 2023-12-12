@@ -9,6 +9,7 @@ function debug_print() { :; }
 
 # Functions!
 . ~/.config/dotfiles/functions/e_related.sh
+. ~/.config/dotfiles/functions/crypt.sh
 
 # Let's start putting anything shell-agnostic in here, instead of in *rc
 
