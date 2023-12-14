@@ -94,11 +94,11 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
-highlight LineNr ctermbg=Gray
-highlight CursorLineNr ctermbg=Gray
+" highlight LineNr ctermbg=Gray
+" highlight CursorLineNr ctermbg=Gray
 
 " You can override this in ~/.vim/.more/local_vim
-set bg=light
+" set bg=light
 
 " @ Folding
 if has('folding')

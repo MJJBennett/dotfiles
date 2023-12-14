@@ -21,13 +21,15 @@ Plug 'tell-k/vim-autopep8'
 Plug 'rust-lang/rust.vim'
 
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'catppuccin/nvim', {'as': 'catppuccin', 'tag': 'v0.2'}
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " EdenEast/nightfox.nvim
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'NvChad/nvim-colorizer.lua'
 Plug 'folke/trouble.nvim'
-Plug 'feline-nvim/feline.nvim'
+" Plug 'feline-nvim/feline.nvim'
+" Plug 'itchyny/lightline.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -73,88 +75,77 @@ let g:netrw_list_hide = '\s*.git'
 autocmd FileType javascript setlocal equalprg=js-beautify\ --stdin
 autocmd FileType javascript setlocal equalprg=js-beautify\ --stdin
 
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--preview', 'bat --theme=Coldark-Cold --style=numbers --color=always --line-range :500 {}']}, <bang>0)
+
 set termguicolors
-let g:catppuccin_flavour = "latte"
 lua << EOF
 require("catppuccin").setup({
+    flavour = "latte",
+    transparent_background = false,
+    term_colors = true,
     integrations = {
         gitsigns = true,
         barbar = true,
         lsp_trouble = true,
         coc_nvim = true,
+--        lightline = true,
     }
 })
+
+vim.cmd.colorscheme "catppuccin-latte"
 
 require("colorizer").setup()
 require("gitsigns").setup()
 
 require("trouble").setup()
 
-local clrs = require("catppuccin.palettes").get_palette()
-local ctp_feline = require('catppuccin.groups.integrations.feline')
-local U = require "catppuccin.utils.colors"
-local latte = require("catppuccin.palettes").get_palette "latte"
-
-ctp_feline.setup({
-    assets = {
-        left_separator = "",
-        right_separator = "",
-        mode_icon = "",
-        dir = "",
-        file = "",
-        lsp = {
-            server = "",
-            error = "",
-            warning = "",
-            info = "",
-            hint = "",
-        },
-        git = {
-            branch = "",
-            added = "",
-            changed = "",
-            removed = "",
-        },
-    },
-    sett = {
-        text = U.vary_color({ latte = latte.base }, clrs.surface0),
-        bkg = U.vary_color({ latte = latte.crust }, clrs.surface0),
-        diffs = clrs.mauve,
-        extras = clrs.overlay1,
-        curr_file = clrs.maroon,
-        curr_dir = clrs.flamingo,
-        show_modified = true -- show if the file has been modified
-    },
-    mode_colors = {
-        ["n"] = { "NORMAL", clrs.lavender },
-        ["no"] = { "N-PENDING", clrs.lavender },
-        ["i"] = { "INSERT", clrs.green },
-        ["ic"] = { "INSERT", clrs.green },
-        ["t"] = { "TERMINAL", clrs.green },
-        ["v"] = { "VISUAL", clrs.flamingo },
-        ["V"] = { "V-LINE", clrs.flamingo },
-        ["�"] = { "V-BLOCK", clrs.flamingo },
-        ["R"] = { "REPLACE", clrs.maroon },
-        ["Rv"] = { "V-REPLACE", clrs.maroon },
-        ["s"] = { "SELECT", clrs.maroon },
-        ["S"] = { "S-LINE", clrs.maroon },
-        ["�"] = { "S-BLOCK", clrs.maroon },
-        ["c"] = { "COMMAND", clrs.peach },
-        ["cv"] = { "COMMAND", clrs.peach },
-        ["ce"] = { "COMMAND", clrs.peach },
-        ["r"] = { "PROMPT", clrs.teal },
-        ["rm"] = { "MORE", clrs.teal },
-        ["r?"] = { "CONFIRM", clrs.mauve },
-        ["!"] = { "SHELL", clrs.green },
-    }
+-- apparently this is deprecated? it's commented out anyways. for here.
+require("barbar").setup({
+    icons = { button = 'x' },
 })
 
-require("feline").setup({
-    components = ctp_feline.get(),
-})
+require('lualine').setup {
+    options = {
+        theme = 'catppuccin',
+        component_separators = '|',
+        -- section_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+    },
+    sections = {
+        lualine_a = {
+            -- { 'mode', separator = { left = '' }, right_padding = 0 },
+            { 'mode', separator = { left = '' }, right_padding = 0 },
+        },
+        lualine_b = { 'filetype', 'filename', 'branch' },
+        lualine_c = { 'fileformat' },
+        lualine_x = {},
+        lualine_y = { 'filetype', 'progress' },
+        lualine_z = {
+            -- { 'location', separator = { right = '' }, left_padding = 0 },
+            { 'location', separator = { right = '' }, left_padding = 0 },
+        },
+    },
+    inactive_sections = {
+        lualine_a = { 'filename' },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = { 'location' },
+    },
+    tabline = {},
+    extensions = {},
+}
+
+--local ctp_feline = require('catppuccin.groups.integrations.feline')
+--
+--require("feline").setup({
+--    components = ctp_feline.get(),
+--})
 EOF
 
-colorscheme catppuccin-latte
+let g:lightline = {'colorscheme': 'catppuccin', 'enable': {'tabline': 0}}
 
 " Some coc things! :)
 let g:coc_global_extensions = ['coc-pyright', 'coc-rust-analyzer', 'coc-cmake', 'coc-prettier']
