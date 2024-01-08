@@ -29,6 +29,8 @@ More things to install:
 (Inside NeoVim)
 ```
 :CocInstall coc-cmake
+:CocInstall coc-pyright
+:CocInstall coc-snippets
 ```
 
 ### Terminal / Shell Configuration

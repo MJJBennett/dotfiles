@@ -1,3 +1,4 @@
 :CocInstall @yaegassy/coc-ruff
 or vim-plug
 coc-pyright
+coc-snippets

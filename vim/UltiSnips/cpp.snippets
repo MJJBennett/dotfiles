@@ -1,0 +1,35 @@
+snippet main bA
+int main(int argc, char* argv[])
+{
+    ${0}
+    return 0;
+}
+endsnippet
+
+snippet uds "Create destructor." bA
+${1}::~${1}()
+{
+    ${0}
+}
+endsnippet
+
+snippet ucs "Create constructor." bA
+${1}::~${1}(${2:args})${3}
+{
+    ${0}
+}
+endsnippet
+
+snippet umf "Create member function." bA
+${1:return type} ${2:class}::${3:function}(${4})
+{
+    ${0}
+}
+endsnippet
+
+snippet ugc "Generic block creation."
+${1} (${2})
+{
+    ${0}
+}
+endsnippet

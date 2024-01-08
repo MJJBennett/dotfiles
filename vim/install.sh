@@ -5,6 +5,11 @@ if [ ! -d $HOME/.vim ]; then
     exit 1
 fi
 
+# Make our UltiSnips directory, it's just easier this way...
+if [ ! -d $HOME/.vim/UltiSnips ]; then
+    mkdir $HOME/.vim/UltiSnips
+fi
+
 # Location of our base dotfiles directory.
 BASE_DIR="$(dirname $0)/.."
 
@@ -42,5 +47,7 @@ fi
 scripts/install.sh
 
 cp extensions.vim ~/.vim/.more/extensions.vim
+
+cp UltiSnips/*.snippets $HOME/.vim/UltiSnips
 
 echo ":CocInstall coc-pyright"
