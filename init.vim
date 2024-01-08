@@ -21,7 +21,7 @@ autocmd ColorScheme * hi CocSearch ctermbg=233 guibg=#13354A
 "      \ <SID>check_back_space() ? "\<TAB>" :
 "      \ coc#refresh()
 inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#pum#visible() ? coc#pum#next(1) :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
