@@ -154,3 +154,11 @@ function efv {
     fi
     e "$FILENAME"
 }
+
+function fr {
+    RGRES=$(rg --line-number --no-heading --color=always --smart-case "$@")
+    if [ "$?" -ne 0 ]; then
+        echo "Bad ripgrep result."
+        return 1
+    fi
+}

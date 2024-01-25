@@ -2,9 +2,9 @@
 # alias debug_print="echo"
 function debug_print() { :; }
 
-. ~/.config/dotfiles/git_aliases
-. ~/.config/dotfiles/more_aliases
-. ~/.config/dotfiles/exports
+. ~/.config/dotfiles/git_aliases.sh
+. ~/.config/dotfiles/more_aliases.sh
+. ~/.config/dotfiles/exports.sh
 . ~/.config/dotfiles/profile.sh
 
 # Functions!

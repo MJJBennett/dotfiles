@@ -6,8 +6,8 @@ function dotdif
 }
 
 dotdif git_aliases
-dotdif custom_profile
-dotdif more_aliases
+dotdif custom_profile.sh
+dotdif more_aliases.sh
 
 diff vim/src.vim ~/.vim/vimrc
 diff vim/more.vim ~/.vim/.more/more.vim
