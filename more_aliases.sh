@@ -161,4 +161,18 @@ function fr {
         echo "Bad ripgrep result."
         return 1
     fi
+    FZFRES=$(echo "$RGRES" | fzf -d ':' -n 2.. --ansi --no-sort --preview-window "down:20%:+{2}" --preview 'bat --theme=Coldark-Cold --style=numbers --color=always --highlight-line {2} {1}')
+    if [ "$?" -ne 0 ]; then
+        echo "Bad FZF result."
+        return 1
+    fi
+    CUTRES=$(echo "$FZFRES" | cut -d: -f1-2)
+    fn="${CUTRES%%:*}"
+    ln="$(echo "${CUTRES}" | cut -d: -f2)"
+    if [ ! -z "$fn" ]; then
+        nvim +"${ln}" "$fn"
+    else
+        echo "Bad file result."
+        return 1
+    fi
 }
