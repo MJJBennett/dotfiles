@@ -5,6 +5,13 @@
 # TODO - Let this script run standalone, and clone the dotfiles repo and install everything through a single curl | sh.
 
 # Prerequisites: git, zsh
+PM="${PM:-apt}"
+if ! type "${PM}" > /dev/null; then
+    echo "${PM} not installed, try with PM=yum or etc"
+    exit 1
+fi
+
+sudo ${PM} install -y curl neovim git fzf zsh
 
 if ! type zsh > /dev/null; then
     echo "zsh is not installed. Install using your current package manager."

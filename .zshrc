@@ -5,6 +5,13 @@ if [ -d /usr/lib/wsl/ ]; then
     export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/wsl/lib:/snap/bin"
 fi
 
+# PRE-SETUP SOURCING.
+# These are done as soon as possible so that utilities, etc. are available in later setup steps
+# if necessary. Mostly just fixing path, etc.
+if [ -f "$HOME/.local/presource.sh" ]; then
+    . "$HOME/.local/presource.sh" 
+fi
+
 ##########################################################################################
 ########################### THEMES CONFIGURATION #########################################
 ##########################################################################################
@@ -12,7 +19,11 @@ fi
 # Can set to "random" for ...fun
 ZSH_THEME="robbyrussell"
 if [ -f ~/.config/local_theme ]; then 
+    echo "local_theme is deprecated. Please rename to ~/.local/theme.sh"
     . ~/.config/local_theme
+fi
+if [ -f "$HOME/.local/theme.sh" ]; then
+    .  "$HOME/.local/theme.sh"
 fi
 
 export COLORTERM=truecolor
@@ -91,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # bindkey -M viins 'jj' vi-cmd-mode
 
 # Finally source everything else
-source ~/.config/dotfiles/custom_profile
+source ~/.config/dotfiles/custom_profile.sh
 
 if [ "$ZSH_THEME" = "powerlevel10k/powerlevel10k" ]; then
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
