@@ -55,7 +55,8 @@ export _Z_DATA="$HOME/.config/z/zstore"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="dd/mm/yyyy"
+# Ahhhh, zsh. Ever useful.
+HIST_STAMPS="%d/%m/%y %T"
 
 # Some plugins require preconfiguration.
 # In the future, this should be moved to a ~/.config file.
