@@ -34,7 +34,7 @@ nnoremap <Leader><Leader>h <C-W>h
 vnoremap <C-R><C-F> :ClangFormat<CR>
 nnoremap <C-R><C-A> :ClangFormat<CR>
 nnoremap <C-J><C-A> :%!prettier %<CR>
-autocmd FileType python noremap <buffer> <C-R><C-A> :CocCommand prettier.formatFile<CR>
+autocmd FileType python,typescript,javascript noremap <buffer> <C-R><C-A> :CocCommand prettier.formatFile<CR>
 autocmd FileType rust noremap <buffer> <C-R><C-A> :RustFmt<CR>
 " cmake-format remap is done in aliases.vim
 
