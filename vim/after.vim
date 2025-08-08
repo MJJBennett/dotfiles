@@ -1,4 +1,4 @@
-source ~/.vim/.more/python.vim
-source ~/.vim/.more/more.vim
-source ~/.vim/.more/local.vim
-source ~/.vim/scripts/aliases.vim
+source ~/.config/dotfiles/vim/python.vim
+source ~/.config/dotfiles/vim/more.vim
+source ~/.config/vim-local.vim
+source ~/.config/dotfiles/vim/scripts/aliases.vim

@@ -2,6 +2,10 @@
 # Paths
 export PATH="$HOME/.local/bin/:$PATH"
 
+##### ZSHRC #####
+# Improves paste performance.
+DISABLE_MAGIC_FUNCTIONS=true
+
 # No Longer Modified:
 export XDG_CONFIG_HOME="$HOME/.config/"
 

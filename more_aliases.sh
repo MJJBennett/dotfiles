@@ -1,10 +1,3 @@
-alias macmake="cmake .. -DCMAKE_CXX_COMPILER=/usr/local/bin/g++ -DCMAKE_C_COMPILER=/usr/local/bin/gcc-8"
-alias macmakecc="macmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
-
-# These require a path to be passed
-alias cmake-gcc="cmake -DCMAKE_CXX_COMPILER=/usr/local/bin/g++ -DCMAKE_C_COMPILER=/usr/local/bin/gcc-8"
-alias cmake-gcc-cc="cmake-gcc -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
-
 alias ccmake="cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 
 alias fcb="ccmake && make all && ctest --verbose"
@@ -24,13 +17,9 @@ alias fcb="ccmake && make all && ctest --verbose"
 alias cardoc="cargo doc --open --package "
 alias rusdoc="rustup doc"
 
-alias la="ls -la"
-alias lac="ls -la -I \"*.ignore\" -I \".clang-format\" -I \".git\" -I \".idea\" -I \"__pycache__\" -I \".git\" -I \".git\" -I \".git\""
 alias usage="du -h -d1"
-alias ze="vim ~/.zshrc"
 
 alias nv="nvim"
-alias vim="echo LOL"
 
 # This only works with gitify somewhere in the path
 function gch {
@@ -42,8 +31,8 @@ alias cw="wc -w *.md"
 alias cwt="cw | egrep '([0-9]+) *total' | egrep -o '[0-9]+'"
 
 # Mac aliases
-alias mac-psc="log show --predicate 'eventMessage contains \"Previous shutdown cause\"' --last 24h"
-alias mac-upt="sudo sntp -sS time.apple.com"
+# alias mac-psc="log show --predicate 'eventMessage contains \"Previous shutdown cause\"' --last 24h"
+# alias mac-upt="sudo sntp -sS time.apple.com"
 
 function replace {
     if [[ "$OSTYPE" != "darwin"* ]]; then
@@ -128,51 +117,3 @@ alias whi="whence -vf"
 
 # alias scrabble="cd ~/programming/scratch/scrabble/ && python3 scrabble.py"
 #### END
-
-# TODO - Improve our setup for FZF.
-# However, this does work for now.
-# Note: Seems different systems have different names for fd-find. Very cool.
-# Just do ln -s $(which fdfind) ~/.local/bin/fd
-export FZF_DEFAULT_COMMAND="fd --type file --color=always"
-export FZF_DEFAULT_OPTS="--ansi"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-function fv {
-    FILENAME="$(fzf --preview 'bat --theme=Coldark-Cold --style=numbers --color=always --line-range :500 {}')"
-    if [ "$?" -ne 0 ]
-    then
-        return 1
-    fi
-    nvim "$FILENAME"
-}
-
-function efv {
-    FILENAME="$(fzf --preview 'bat --theme=Coldark-Cold --style=numbers --color=always --line-range :500 {}')"
-    if [ "$?" -ne 0 ]
-    then
-        return 1
-    fi
-    e "$FILENAME"
-}
-
-function fr {
-    RGRES=$(rg --line-number --no-heading --color=always --smart-case "$@")
-    if [ "$?" -ne 0 ]; then
-        echo "Bad ripgrep result."
-        return 1
-    fi
-    FZFRES=$(echo "$RGRES" | fzf -d ':' -n 2.. --ansi --no-sort --preview-window "down:20%:+{2}" --preview 'bat --theme=Coldark-Cold --style=numbers --color=always --highlight-line {2} {1}')
-    if [ "$?" -ne 0 ]; then
-        echo "Bad FZF result."
-        return 1
-    fi
-    CUTRES=$(echo "$FZFRES" | cut -d: -f1-2)
-    fn="${CUTRES%%:*}"
-    ln="$(echo "${CUTRES}" | cut -d: -f2)"
-    if [ ! -z "$fn" ]; then
-        nvim +"${ln}" "$fn"
-    else
-        echo "Bad file result."
-        return 1
-    fi
-}
