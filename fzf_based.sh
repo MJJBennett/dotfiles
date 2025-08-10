@@ -56,12 +56,14 @@ function fh() {
 
 # FZF: Search through a file, edit it with the correct line number.
 function ff {
-    FILENAME="$(fzf --preview 'bat --theme=Coldark-Cold --style=numbers --color=always --line-range :500 {}')"
-    if [ "$?" -ne 0 ]
-    then
+    FZFRES=$(bat --color=always --style=numbers "${1}" | fzf -d ':' +s --tac | grep -oE '^\s*[0-9]*' | tr -d ' ')
+    if [ "$?" -ne 0 ]; then
         return 1
     fi
-    e "$FILENAME"
+    if [[ "${FZFRES}" = "" ]]; then
+        return 1
+    fi
+    nvim +"${FZFRES}" "${1}"
 }
 
 # FZF: Check out a branch.
